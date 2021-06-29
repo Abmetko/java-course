@@ -7,8 +7,8 @@ import java.util.List;
 
 public class StreamCounter {
 
-    static List<Integer> list1 = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
-    static List<Integer> list2 = Arrays.asList(2,5,10,11,12,100);
+    static List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    static List<Integer> list2 = Arrays.asList(2, 5, 10, 11, 12, 100);
     static List<List<Integer>> commonList = new ArrayList<>();
 
     static {
@@ -16,12 +16,12 @@ public class StreamCounter {
         commonList.add(list2);
     }
 
-    public static int cycleTest(){
+    public static int cycleTest() {
         int count = 0;
-        for(List<Integer> l:commonList){
-            for(int i:l){
-                if(i%2==0){
-                    count+=1;
+        for (List<Integer> l : commonList) {
+            for (int i : l) {
+                if (i % 2 == 0) {
+                    count += 1;
                 }
             }
         }
@@ -29,7 +29,7 @@ public class StreamCounter {
     }
 
     public static int streamTest() {
-        return commonList.stream().mapToInt(l -> (int) l.stream().filter(i -> i%2==0).count()).sum();
+        return commonList.stream().mapToInt(l -> (int) l.stream().filter(i -> i % 2 == 0).count()).sum();
     }
 
     public static void main(String[] args) {
