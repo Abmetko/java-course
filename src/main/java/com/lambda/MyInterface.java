@@ -1,7 +1,7 @@
 package com.lambda;
 
 @FunctionalInterface
-interface MyInterface {
+interface MyInterface<T> {
 
-    int accept(int value);
+    T get();
 }
