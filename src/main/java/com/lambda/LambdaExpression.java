@@ -3,7 +3,7 @@ package com.lambda;
 import java.util.concurrent.TimeoutException;
 
 
-public class Lambda {
+public class LambdaExpression {
 
     private static void sleep(int sleepTime) {
         try {
@@ -19,16 +19,14 @@ public class Lambda {
             if (System.currentTimeMillis() - timeStart > timeoutMilliseconds) {
                 throw new TimeoutException(String.format("Time out after %d ms: ", timeoutMilliseconds) + exceptionMsg);
             }
+            System.out.println("try again...");
             sleep(pollingIntervalMs);
         }
     }
 
     public static void main(String[] args) throws TimeoutException {
         whileTrue(2000, 10000, () -> {
-            if(3>2) {
-                return true;
-            }
-            else return false;
+            return Math.random() * 2 > 1;
         }, "failed...");
     }
 }
