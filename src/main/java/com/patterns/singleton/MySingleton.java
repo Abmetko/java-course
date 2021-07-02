@@ -3,15 +3,14 @@ package com.patterns.singleton;
 public class MySingleton {
 
     private static MySingleton instance = null;
-    public int value;
 
-    private MySingleton(int value) {
-        this.value = value;
+    private MySingleton() {
+
     }
 
-    public static MySingleton getInstance(int value) {
+    public static MySingleton getInstance() {
         if (instance == null) {
-            instance = new MySingleton(value);
+            instance = new MySingleton();
         }
         return instance;
     }

@@ -20,6 +20,7 @@ public class TestBuilder {
 
         phoneBuilder.setOsVersion(SystemVersion.NOUGAT.getValue());
 
+        /* check object is changed by means of builder */
         System.out.printf("Android version is '%s' %n", mobilePhone.osVersion);
     }
 }
