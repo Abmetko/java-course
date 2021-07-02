@@ -27,6 +27,6 @@ public class LambdaExpression {
     public static void main(String[] args) throws TimeoutException {
         whileTrue(2000, 10000, () -> {
             return Math.random() * 2 > 1;
-        }, "failed...");
+        }, "FAILED");
     }
 }

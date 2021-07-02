@@ -1,6 +1,6 @@
 package com.patterns.factory;
 
-public class LoginScreen extends BaseScreen{
+public class LoginScreen implements BaseScreen{
 
     @Override
     public void openScreen(){

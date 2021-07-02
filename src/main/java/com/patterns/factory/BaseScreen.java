@@ -1,6 +1,6 @@
 package com.patterns.factory;
 
-public abstract class BaseScreen {
+public interface BaseScreen {
 
-    public void openScreen(){};
+    void openScreen();
 }
