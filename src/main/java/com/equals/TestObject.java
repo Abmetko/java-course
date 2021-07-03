@@ -1,4 +1,4 @@
-package com.classObject;
+package com.equals;
 
 import java.util.Objects;
 
