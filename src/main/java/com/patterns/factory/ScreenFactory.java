@@ -1,14 +1,16 @@
 package com.patterns.factory;
 
-import com.enums.Screens;
-
+import com.enums.Screen;
 
 public class ScreenFactory {
 
-    public BaseScreen getScreen(Screens type) {
+    public BaseScreen getScreen(Screen type) {
         BaseScreen screen;
         switch (type) {
-            case LOGIN:
+            case SPLASH:
+                screen = new SplashScreen();
+                break;
+            case SIGN_IN:
                 screen = new LoginScreen();
                 break;
             case MAIN:

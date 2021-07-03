@@ -9,4 +9,6 @@ public class MobilePhone {
     public boolean tablet;
 
     public String color;
+
+    public String dpi;
 }

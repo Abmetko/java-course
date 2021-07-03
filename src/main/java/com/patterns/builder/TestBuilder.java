@@ -1,6 +1,7 @@
 package com.patterns.builder;
 
 import com.enums.Colors;
+import com.enums.Dpi;
 import com.enums.OperationSystem;
 import com.enums.SystemVersion;
 
@@ -13,7 +14,8 @@ public class TestBuilder {
                 .setColor(Colors.GREY.getValue())
                 .setOsType(OperationSystem.ANDROID.getValue())
                 .setOsVersion(SystemVersion.OREO.getValue())
-                .setTablet(false)
+                .isTablet(false)
+                .setDpi(Dpi.XHDPI.name())
                 .build();
 
         System.out.printf("Android version is '%s' %n", mobilePhone.osVersion);

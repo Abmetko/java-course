@@ -1,15 +1,17 @@
 package com.patterns.factory;
 
-import com.enums.Screens;
+import com.enums.Screen;
 
 public class TestFactory {
 
     public static void main(String[] args) {
         ScreenFactory factory = new ScreenFactory();
 
-        BaseScreen loginScreen = factory.getScreen(Screens.LOGIN);
-        BaseScreen mainScreen = factory.getScreen(Screens.MAIN);
+        BaseScreen splashScreen = factory.getScreen(Screen.SPLASH);
+        BaseScreen loginScreen = factory.getScreen(Screen.SIGN_IN);
+        BaseScreen mainScreen = factory.getScreen(Screen.MAIN);
 
+        splashScreen.openScreen();
         loginScreen.openScreen();
         mainScreen.openScreen();
     }

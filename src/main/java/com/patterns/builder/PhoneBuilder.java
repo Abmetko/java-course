@@ -18,13 +18,18 @@ public class PhoneBuilder {
         return this;
     }
 
-    public PhoneBuilder setTablet(Boolean tablet) {
+    public PhoneBuilder isTablet(Boolean tablet) {
         this.mobilePhone.tablet = tablet;
         return this;
     }
 
     public PhoneBuilder setOsVersion(double osVersion) {
         this.mobilePhone.osVersion = osVersion;
+        return this;
+    }
+
+    public PhoneBuilder setDpi(String dpi) {
+        this.mobilePhone.dpi = dpi;
         return this;
     }
 
