@@ -87,3 +87,4 @@ fabric.properties
 *.zip
 *.tar.gz
 *.rar
+*.json
