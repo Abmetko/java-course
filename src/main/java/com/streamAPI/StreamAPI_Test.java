@@ -21,7 +21,6 @@ public class StreamAPI_Test {
         System.out.println("PASSED...");
     }
 
-    /* check element is present and then check it's a single object */
     public static void streamTest_3(int val) {
         System.out.println("PASSED: " + list.stream().filter(i -> i.equals(val)).reduce((a, b) -> {
             throw new IllegalStateException("FAILED: " + a + ", " + b);

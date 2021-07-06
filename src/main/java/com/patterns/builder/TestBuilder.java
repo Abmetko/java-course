@@ -18,13 +18,13 @@ public class TestBuilder {
                 .setDpi(Dpi.XHDPI.name())
                 .build();
 
-        /* check current value of object field */
+        // TODO - текущее значение поля объекта
         System.out.printf("Android version is '%s' %n", mobilePhone.osVersion);
 
-        /* modify the object */
+        // TODO - изменяем значение поля
         phoneBuilder.setOsVersion(SystemVersion.NOUGAT.getValue());
 
-        /* check modified object */
+        // TODO - проверяем измененное значение поля
         System.out.printf("Android version is '%s' %n", mobilePhone.osVersion);
     }
 }
