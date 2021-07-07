@@ -32,6 +32,13 @@ public class TestObject {
         return Objects.equals(param, that.param);
     }
 
+    // TODO - в классе String метод equals переопределен
+    public static void equalsTrue2() {
+        String obj_1 = new String("1");
+        String obj_2 = new String("1");
+        System.out.println(obj_1.equals(obj_2)); //true
+    }
+
     // TODO - два разных объекта но идентичных по содержанию, c переопределенным методом equals
     public static void equalsTrueWithOverrideEquals() {
         TestObject obj_1 = new TestObject("test");
@@ -43,5 +50,6 @@ public class TestObject {
         equalsFalse();
         equalsTrue();
         equalsTrueWithOverrideEquals();
+        equalsTrue2();
     }
 }
