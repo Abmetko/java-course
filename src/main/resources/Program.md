@@ -1,20 +1,4 @@
-
-Maven
-
-* Жизненный цикл Maven.
-
-* pom.xml: dependency, plugin, property.
-
-* Artifact.
-
-* Archetype.
-
-* Локальный репозиторий(.m2). Maven central.
-
-
-
-
-Java
+**Java**
 
 * Классы. Методы. Создание объекта. Оператор new. Конструктор.
 
@@ -45,9 +29,20 @@ Java
 * Обработка исключений. Блоки: try, catch, finally. Операторы: throw, throws. Иерархия исключений(проверяемые, непроверяемые).
 
 
+**Maven**
+
+* Жизненный цикл Maven.
+
+* pom.xml: dependency, plugin, property.
+
+* Artifact.
+
+* Archetype.
+
+* Локальный репозиторий(.m2). Maven central.
 
 
-Automation
+**Automation**
 
 * Автоматизация тестирования rest API с библиотекой Rest Assured. POJO классы. Библиотека Jackson.
 
