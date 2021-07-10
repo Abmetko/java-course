@@ -9,6 +9,8 @@ public class StreamAPI_Test {
 
     static List<Integer> list = Arrays.asList(10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
+    //TODO - в начале коллекция приобразовывается в stream, далее фильтруется и на основе фильтра создается новая коллекция.
+    // далее производится маппинг(преобразование каждого элемента коллекции) и цикл forEach.
     public static void streamTest_1() {
         list.stream().filter(i -> i % 2 != 0).collect(Collectors.toList()).stream().map(i -> i + 10).forEach(i -> {
             System.out.printf("%d ", i);
