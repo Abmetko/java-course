@@ -11,25 +11,22 @@ public class StreamAPI_Test {
 
     //TODO - в начале коллекция приобразовывается в stream, далее фильтруется и на основе фильтра создается новая коллекция.
     // далее производится маппинг(преобразование каждого элемента коллекции) и цикл forEach.
-    public static void streamTest_1() {
+    public static void streamMappingTest() {
         list.stream().filter(i -> i % 2 != 0).collect(Collectors.toList()).stream().map(i -> i + 10).forEach(i -> {
             System.out.printf("%d ", i);
         });
     }
 
-    public static void streamTest_2(int val) {
+    public static void streamThrowExceptionTest(int val) {
         list.stream().filter(i -> i.equals(val)).findAny()
-                .orElseThrow(() -> new AssertionError(String.format("there is no value: %d", val)));
+                .orElseThrow(() -> new NullPointerException(String.format("there is no value: %d", val)));
         System.out.println("PASSED...");
     }
 
-    public static void streamTest_3(int val) {
+    //TODO - после выполнения фильтра, проверка что только один элемент присутствует, иначе выбрасывается исключение.
+    public static void streamReduceTest(int val) {
         System.out.println("PASSED: " + list.stream().filter(i -> i.equals(val)).reduce((a, b) -> {
             throw new IllegalStateException("FAILED: " + a + ", " + b);
         }).isPresent());
-    }
-
-    public static void main(String[] args) {
-        streamTest_3(11);
     }
 }
