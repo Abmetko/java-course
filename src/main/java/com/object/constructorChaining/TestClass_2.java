@@ -1,4 +1,4 @@
-package com.constructorChaining;
+package com.object.constructorChaining;
 
 public class TestClass_2 extends TestClass_1 {
 
