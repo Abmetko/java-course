@@ -18,7 +18,7 @@ public class ClientsTest extends BaseTest {
     @Order(1)
     public void openClientsPage() {
         $(byText("Clients")).click();
-        Assumptions.assumeTrue($("#clients.portfolio").isDisplayed());
+        assertTrue($("#clients.portfolio").isDisplayed());
     }
 
     @Test
