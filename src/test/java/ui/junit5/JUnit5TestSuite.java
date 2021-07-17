@@ -1,4 +1,4 @@
-package junit5;
+package ui.junit5;
 
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;

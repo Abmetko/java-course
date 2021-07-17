@@ -12,5 +12,3 @@ public class TestSuper extends TestClass_2 {
         TestSuper obj = new TestSuper();
     }
 }
-
-//TODO - оператор super вызывает конструктор(цепочку вызова конструкторов) родительского класса.

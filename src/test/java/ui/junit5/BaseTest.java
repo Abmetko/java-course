@@ -1,4 +1,4 @@
-package junit5;
+package ui.junit5;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
