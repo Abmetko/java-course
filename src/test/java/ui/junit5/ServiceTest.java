@@ -11,8 +11,6 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Execution(ExecutionMode.CONCURRENT)
@@ -37,7 +35,7 @@ public class ServiceTest extends BaseTest {
     }
 
     @AfterEach
-    void sleep(){
+    void sleep() {
         Selenide.sleep(1000);
     }
 }
