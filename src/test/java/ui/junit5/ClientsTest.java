@@ -1,12 +1,13 @@
 package ui.junit5;
 
+import com.codeborne.selenide.Selenide;
+import com.ui.ContainerHeader;
+import com.ui.enums.MenuItems;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Execution(ExecutionMode.CONCURRENT)
@@ -14,17 +15,24 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ClientsTest extends BaseTest {
 
+    private final ContainerHeader containerHeader = new ContainerHeader();
+
     @Test
-    @Order(1)
     public void openClientsPage() {
-        $(byText("Clients")).click();
-        assertTrue($("#clients.portfolio").isDisplayed());
+        String name = MenuItems.CLIENTS.value;
+        containerHeader.selectHeaderMenu(name);
+        assertTrue(containerHeader.isMenuItemSelected(name));
     }
 
     @Test
-    @Order(2)
     public void openServicePage() {
-        $(byText("Service")).click();
-        assertTrue($("#serveces").isDisplayed());
+        String name = MenuItems.SERVICE.value;
+        containerHeader.selectHeaderMenu(name);
+        assertTrue(containerHeader.isMenuItemSelected(name));
+    }
+
+    @AfterEach
+    void sleep(){
+        Selenide.sleep(1000);
     }
 }

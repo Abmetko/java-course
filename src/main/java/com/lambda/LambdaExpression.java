@@ -1,16 +1,15 @@
 package com.lambda;
 
+import lombok.SneakyThrows;
+
 import java.util.concurrent.TimeoutException;
 
 
 public class LambdaExpression {
 
+    @SneakyThrows
     private static void sleep(int sleepTime) {
-        try {
-            Thread.sleep(sleepTime);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        Thread.sleep(sleepTime);
     }
 
     public static void whileTrue(int pollingIntervalMs, int timeoutMilliseconds, MyInterface<Boolean> myInterface, String exceptionMsg) throws TimeoutException {
