@@ -1,9 +1,7 @@
 package ui.junit5;
 
-import com.codeborne.selenide.Selenide;
 import com.ui.ContainerHeader;
 import com.ui.enums.MenuItems;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
