@@ -33,9 +33,4 @@ public class ServiceTest extends BaseTest {
         containerHeader.selectHeaderMenu(name);
         assertTrue(containerHeader.isMenuItemSelected(name));
     }
-
-    @AfterEach
-    void sleep() {
-        Selenide.sleep(1000);
-    }
 }

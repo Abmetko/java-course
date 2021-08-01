@@ -3,6 +3,7 @@ package ui.junit5;
 import com.codeborne.selenide.Selenide;
 import com.ui.ContainerHeader;
 import com.ui.enums.MenuItems;
+import org.junit.After;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
@@ -29,10 +30,5 @@ public class ClientsTest extends BaseTest {
         String name = MenuItems.SERVICE.value;
         containerHeader.selectHeaderMenu(name);
         assertTrue(containerHeader.isMenuItemSelected(name));
-    }
-
-    @AfterEach
-    void sleep(){
-        Selenide.sleep(1000);
     }
 }

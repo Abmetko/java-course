@@ -1,5 +1,7 @@
 package ui.junit5;
 
+import com.codeborne.selenide.Selenide;
+import org.junit.After;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
@@ -22,5 +24,10 @@ public class BaseTest extends JUnit5TestSuite {
     @AfterAll
     static void tearDown() {
         closeWebDriver();
+    }
+
+    @After
+    public void sleep() {
+        Selenide.sleep(1000);
     }
 }
