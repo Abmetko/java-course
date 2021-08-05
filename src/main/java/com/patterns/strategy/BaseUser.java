@@ -1,6 +1,6 @@
 package com.patterns.strategy;
 
-public class BaseUser {
+public abstract class BaseUser {
 
     private final SignUpStrategy SIGN_UP_STRATEGY;
 
