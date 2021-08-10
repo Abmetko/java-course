@@ -13,7 +13,7 @@ public class SerializationTest {
         ObjectMapper mapper = new ObjectMapper();
 
         // TODO - сериализация данных файла в java объект
-        mapper.writeValue(new File("src/main/java/com/serialization/user.json"), new MyClass("John", "LA", 55));
+        mapper.writeValue(new File("src/main/java/com/serialization/user.json"), new MyClass("John", "LA", 80));
 
         // TODO - дессериализация из файла
         MyClass myClass = mapper.readValue(new File("src/main/java/com/serialization/user.json"), MyClass.class);
