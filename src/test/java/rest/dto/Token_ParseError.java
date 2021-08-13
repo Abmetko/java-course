@@ -8,10 +8,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "token_type",
         "refresh_token",
         "expires_in",
-        "scope",
-        "jti"
+        "scope"
 })
-public class Token {
+public class Token_ParseError {
 
     @JsonProperty("access_token")
     private String accessToken;
@@ -23,8 +22,6 @@ public class Token {
     private Integer expiresIn;
     @JsonProperty("scope")
     private String scope;
-    @JsonProperty("jti")
-    private String jti;
 
     @JsonProperty("access_token")
     public String getAccessToken() {
@@ -74,15 +71,5 @@ public class Token {
     @JsonProperty("scope")
     public void setScope(String scope) {
         this.scope = scope;
-    }
-
-    @JsonProperty("jti")
-    public String getJti() {
-        return jti;
-    }
-
-    @JsonProperty("jti")
-    public void setJti(String jti) {
-        this.jti = jti;
     }
 }

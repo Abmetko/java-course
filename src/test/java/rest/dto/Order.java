@@ -61,8 +61,8 @@ public class Order {
     private Double sl;
     @JsonProperty("tp")
     private Double tp;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+//    @JsonIgnore
+//    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("symbol")
     public String getSymbol() {
@@ -214,13 +214,13 @@ public class Order {
         this.tp = tp;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+//    @JsonAnyGetter
+//    public Map<String, Object> getAdditionalProperties() {
+//        return this.additionalProperties;
+//    }
+//
+//    @JsonAnySetter
+//    public void setAdditionalProperty(String name, Object value) {
+//        this.additionalProperties.put(name, value);
+//    }
 }
