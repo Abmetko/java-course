@@ -30,6 +30,8 @@
 
 * Обработка исключений. Блоки: `try, catch, finally`. Операторы: throw, throws. Иерархия исключений (проверяемые, непроверяемые).
 
+* Debug.
+
 * Регулярные выражения.
 
 * Enum. Применение перечислений.
@@ -50,14 +52,14 @@
 
 # **`Automation`**
 
-* Паттерны проектирования тестов: page object, page factory.
-
 * Автоматизация тестирования rest API с библиотекой [Restassured](https://rest-assured.io/). Сериализация/десериализация с помощью библиотеки [Jackson](https://mvnrepository.com/search?q=com.fasterxml.jackson.core). 
-* Геренация json в [POJO классы](https://www.jsonschema2pojo.org/).
+[POJO классы](https://www.jsonschema2pojo.org/).
 
 * Организация тестов с [TestNG](https://testng.org/doc/). Аннотации. Настрока maven плагина. Создание и конфигурация testng.xml.
 
 * Организация тестов с [Junit5](https://junit.org/junit5/docs/current/user-guide/).
+
+* Паттерны проектирования тестов: page object, page factory.
 
 * Тестирование web приложений с помощью фреймворка [Selenide](https://ru.selenide.org/).
 
