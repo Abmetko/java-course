@@ -1,6 +1,7 @@
 package rest;
 
 import io.restassured.RestAssured;
+import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import rest.dto.AssetLeverage;
@@ -16,9 +17,12 @@ public class BaseRestService {
     private final static String LOGIN = "571854";
     private final static String PASSWORD = "Trader33";
 
+    /**
+     * Static method which allows us to log request and response data
+     * @see RestAssured#filters(Filter, Filter...)
+     */
     static {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
-        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
     }
 
     public Token getToken() {
@@ -28,7 +32,6 @@ public class BaseRestService {
                 PASSWORD);
 
         return given()
-                .with()
                 .contentType("application/x-www-form-urlencoded")
                 .header("Authorization", BASIC_AUTHORIZATION)
                 .when()
@@ -44,7 +47,6 @@ public class BaseRestService {
 
     public AssetLeverage getAssetLeverage(String accessToken) {
         return given()
-                .with()
                 .auth()
                 .oauth2(accessToken)
                 .contentType("application/json")

@@ -6,7 +6,7 @@ import rest.dto.Token;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestBase {
+public class APITest {
 
     private static BaseRestService restService;
     private static Token token;
