@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum OrderTypes {
 
-    OPENED(0),
+    OPEN(0),
     CLOSED(1);
 
     private final int type;

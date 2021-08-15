@@ -1,12 +1,16 @@
 package rest;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
 import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
+import lombok.SneakyThrows;
 import rest.dto.AssetLeverage;
 import rest.dto.Token;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,6 +82,20 @@ public class RestService {
                 .statusCode(200);
     }
 
+    public void getOrderHistory_2(String accessToken, int asset, int orderType) {
+        given()
+                .auth()
+                .oauth2(accessToken)
+                .contentType("application/json")
+                .when()
+                .body(initHistoryBodyFromJson(asset, orderType))
+                .post(BASE_URL + BASE_SERVICE + "/history")
+                .then()
+                .assertThat()
+                .contentType("application/json")
+                .statusCode(200);
+    }
+
     private Map<String, Object> initHistoryBody(int asset, int orderType) {
         Map<String, Object> body = new HashMap<>();
 
@@ -86,6 +104,17 @@ public class RestService {
 
         body.put("startTime", startTime);
         body.put("endTime", endTime);
+        body.put("cmd", asset);
+        body.put("type", orderType);
+        return body;
+    }
+
+    @SneakyThrows
+    private Map<String, Object> initHistoryBodyFromJson(int asset, int orderType) {
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, Object> body = mapper.readValue(new File(
+                "src/main/resources/history.json"), new TypeReference<Map<String, Object>>() {
+        });
         body.put("cmd", asset);
         body.put("type", orderType);
         return body;

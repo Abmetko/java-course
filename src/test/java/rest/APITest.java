@@ -26,7 +26,12 @@ public class APITest {
     }
 
     @Test
-    public void getOrderHistory() {
+    public void getClosedOrderHistory() {
         REST_SERVICE.getOrderHistory(token, ADAUSD.getAssetType(), OrderTypes.CLOSED.getType());
+    }
+
+    @Test
+    public void getOpenOrderHistory() {
+        REST_SERVICE.getOrderHistory_2(token, ADAUSD.getAssetType(), OrderTypes.OPEN.getType());
     }
 }
