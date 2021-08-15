@@ -8,6 +8,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import lombok.SneakyThrows;
 import rest.dto.AssetLeverage;
+import rest.dto.Order;
 import rest.dto.Token;
 
 import java.io.File;
@@ -68,8 +69,8 @@ public class RestService {
                 .as(AssetLeverage.class);
     }
 
-    public void getOrderHistory(String accessToken, int asset, int orderType) {
-        given()
+    public Order[] getOrderHistory(String accessToken, int asset, int orderType) {
+        return given()
                 .auth()
                 .oauth2(accessToken)
                 .contentType("application/json")
@@ -79,11 +80,13 @@ public class RestService {
                 .then()
                 .assertThat()
                 .contentType("application/json")
-                .statusCode(200);
+                .statusCode(200)
+                .extract()
+                .as(Order[].class);
     }
 
-    public void getOrderHistory_2(String accessToken, int asset, int orderType) {
-        given()
+    public Order[] getOrderHistory_2(String accessToken, int asset, int orderType) {
+        return given()
                 .auth()
                 .oauth2(accessToken)
                 .contentType("application/json")
@@ -93,14 +96,16 @@ public class RestService {
                 .then()
                 .assertThat()
                 .contentType("application/json")
-                .statusCode(200);
+                .statusCode(200)
+                .extract()
+                .as(Order[].class);
     }
 
     private Map<String, Object> initHistoryBody(int asset, int orderType) {
         Map<String, Object> body = new HashMap<>();
 
         long endTime = System.currentTimeMillis();
-        long startTime = endTime - 86400000 * 7;
+        long startTime = endTime - 86400000 * 20;
 
         body.put("startTime", startTime);
         body.put("endTime", endTime);
