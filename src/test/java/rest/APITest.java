@@ -26,13 +26,13 @@ public class APITest {
     }
 
     @Test
-    public void getClosedOrderHistory() {
+    public void getClosedOrdersHistory() {
         int numberOfClosedOrders = REST_SERVICE.getOrderHistory(token, ADAUSD.getAssetType(), OrderTypes.CLOSED.getType()).length;
         assertEquals(0, numberOfClosedOrders);
     }
 
     @Test
-    public void getOpenOrderHistory() {
+    public void getOpenOrdersHistory() {
         int numberOfOpenOrders = REST_SERVICE.getOrderHistory_2(token, ADAUSD.getAssetType(), OrderTypes.OPEN.getType()).length;
         assertEquals(1, numberOfOpenOrders);
     }
