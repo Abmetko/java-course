@@ -7,9 +7,12 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 import rest.dto.AssetLeverage;
 import rest.dto.Token;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
-public class BaseRestService {
+public class RestService {
 
     private final static String BASE_URL = "https://api-mobile-live.hftrading.com.au";
     private final static String BASE_SERVICE = "/fms";
@@ -59,5 +62,32 @@ public class BaseRestService {
                 .statusCode(200)
                 .extract()
                 .as(AssetLeverage.class);
+    }
+
+    public void getOrderHistory(String accessToken, int asset, int orderType) {
+        given()
+                .auth()
+                .oauth2(accessToken)
+                .contentType("application/json")
+                .when()
+                .body(initHistoryBody(asset, orderType))
+                .post(BASE_URL + BASE_SERVICE + "/history")
+                .then()
+                .assertThat()
+                .contentType("application/json")
+                .statusCode(200);
+    }
+
+    private Map<String, Object> initHistoryBody(int asset, int orderType) {
+        Map<String, Object> body = new HashMap<>();
+
+        long endTime = System.currentTimeMillis();
+        long startTime = endTime - 86400000 * 7;
+
+        body.put("startTime", startTime);
+        body.put("endTime", endTime);
+        body.put("cmd", asset);
+        body.put("type", orderType);
+        return body;
     }
 }

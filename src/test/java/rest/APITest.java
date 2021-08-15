@@ -1,31 +1,32 @@
 package rest;
 
-import org.junit.jupiter.api.*;
-import rest.dto.Token;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import rest.enums.OrderTypes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static rest.enums.Assets.ADAUSD;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class APITest {
 
-    private static BaseRestService restService;
-    private static Token token;
+    private static final RestService REST_SERVICE = new RestService();
+    private static String token;
 
     @BeforeAll
     static void setUp() {
-        restService = new BaseRestService();
-        token = restService.getToken();
+        token = REST_SERVICE.getToken().getAccessToken();
     }
 
     @Test
-    @Order(1)
-    public void tokenTypeShouldBeEqualToExpectedValue() {
-        assertEquals("bearer", token.getTokenType());
-    }
-
-    @Test
-    @Order(2)
     public void symbolNameShouldBeEqualToExpectedValue() {
-        assertEquals("ADAUSD", restService.getAssetLeverage(token.getAccessToken()).getSymbol());
+        assertEquals(ADAUSD.name(), REST_SERVICE.getAssetLeverage(token).getSymbol());
+    }
+
+    @Test
+    public void getOrderHistory() {
+        REST_SERVICE.getOrderHistory(token, ADAUSD.getAssetType(), OrderTypes.CLOSED.getType());
     }
 }
