@@ -12,6 +12,7 @@ import rest.dto.Order;
 import rest.dto.Token;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -91,7 +92,7 @@ public class RestService {
                 .oauth2(accessToken)
                 .contentType("application/json")
                 .when()
-                .body(initHistoryBodyFromJson(asset, orderType))
+                .body(initHistoryBodyFromJson(new Object[]{"cmd", asset}, new Object[]{"type", orderType}))
                 .post(BASE_URL + BASE_SERVICE + "/history")
                 .then()
                 .assertThat()
@@ -114,14 +115,17 @@ public class RestService {
         return body;
     }
 
+    /** Here we use varargs for passing
+     * @param field for any field which we want to set
+     * */
     @SneakyThrows
-    private Map<String, Object> initHistoryBodyFromJson(int asset, int orderType) {
+    private Map<String, Object> initHistoryBodyFromJson(Object[]... field) {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, Object> body = mapper.readValue(new File(
                 "src/main/resources/history.json"), new TypeReference<Map<String, Object>>() {
         });
-        body.put("cmd", asset);
-        body.put("type", orderType);
+
+        Arrays.stream(field).forEach(f -> body.put((String) f[0], f[1]));
         return body;
     }
 }
