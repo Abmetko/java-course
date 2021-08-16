@@ -115,9 +115,11 @@ public class RestService {
         return body;
     }
 
-    /** Here we use varargs for passing
+    /**
+     * Here we use varargs for passing
+     *
      * @param field for any field which we want to set
-     * */
+     */
     @SneakyThrows
     private Map<String, Object> initHistoryBodyFromJson(Object[]... field) {
         ObjectMapper mapper = new ObjectMapper();
