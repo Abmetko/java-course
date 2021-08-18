@@ -12,7 +12,7 @@ import static rest.enums.OrderTypes.OPEN;
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class APITest extends APITestRunner {
+public class APITest extends TestRunner {
 
     private static final RestService REST_SERVICE = new RestService();
     private static String token;

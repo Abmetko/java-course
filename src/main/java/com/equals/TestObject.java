@@ -1,5 +1,7 @@
 package com.equals;
 
+import com.enums.OperationSystem;
+
 import java.util.Objects;
 
 public class TestObject {

@@ -6,5 +6,5 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SelectClasses(APITest.class)
-public class APITestRunner {
+public class TestRunner {
 }

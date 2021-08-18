@@ -57,9 +57,11 @@
 * Автоматизация тестирования rest API с библиотекой [Restassured](https://rest-assured.io/). Сериализация/десериализация с помощью библиотеки [Jackson](https://mvnrepository.com/search?q=com.fasterxml.jackson.core). 
 [POJO классы](https://www.jsonschema2pojo.org/).
 
-* Организация тестов с [TestNG](https://testng.org/doc/). Аннотации. Настрока maven плагина. Создание и конфигурация testng.xml.
+* TDD: [TestNG](https://testng.org/doc/). Аннотации. Настрока maven плагина. Создание и конфигурация testng.xml.
 
-* Организация тестов с [Junit5](https://junit.org/junit5/docs/current/user-guide/).
+* TDD: [Junit5](https://junit.org/junit5/docs/current/user-guide/).
+
+* BDD: [Cucumber](https://cucumber.io/docs/installation/java/)
 
 * Паттерны проектирования тестов: page object, page factory.
 
