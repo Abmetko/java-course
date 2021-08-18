@@ -5,7 +5,7 @@ import java.util.Locale;
 public class TestInterface {
 
     public static void main(String[] args) {
-        InterfaceTest interfaceTest = (a) -> System.out.println(a);
+        InterfaceTest interfaceTest = System.out::println;
 
         interfaceTest.test("Hello world!");
 

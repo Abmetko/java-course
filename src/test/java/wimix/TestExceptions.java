@@ -1,9 +1,6 @@
 package wimix;
 
-import com.serialization.MyClass;
-
 public class TestExceptions {
-
 
     static int[] array = {1, 2, 3, 4, 5};
 

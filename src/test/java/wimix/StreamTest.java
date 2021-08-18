@@ -13,6 +13,5 @@ public class StreamTest {
         System.out.println(list.stream().filter(i -> i.equals(5)).reduce((u, v) -> {
             throw new IllegalStateException();
         }));
-
     }
 }
