@@ -117,7 +117,6 @@ public class RestService {
 
     /**
      * Here we use varargs for passing
-     *
      * @param field for any field which we want to set
      */
     @SneakyThrows
