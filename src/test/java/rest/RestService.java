@@ -12,6 +12,7 @@ import rest.dto.Order;
 import rest.dto.Token;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class RestService {
     private final static String BASIC_AUTHORIZATION = "Basic ODg4OTk5MDE2OnF3ZXJ0eTE2==";
     private final static String LOGIN = "571854";
     private final static String PASSWORD = "Trader33";
+    private static final ObjectMapper mapper = new ObjectMapper();
 
     /**
      * Static method which allows us to log request and response data
@@ -117,16 +119,30 @@ public class RestService {
 
     /**
      * Here we use varargs for passing
+     *
      * @param field for any field which we want to set
      */
     @SneakyThrows
     private Map<String, Object> initHistoryBodyFromJson(Object[]... field) {
-        ObjectMapper mapper = new ObjectMapper();
         Map<String, Object> body = mapper.readValue(new File(
                 "src/main/resources/history.json"), new TypeReference<Map<String, Object>>() {
         });
 
         Arrays.stream(field).forEach(f -> body.put((String) f[0], f[1]));
         return body;
+    }
+
+    @SneakyThrows
+    public Order getOrderBody() {
+        InputStream bodyStream = Order.class.getResourceAsStream("order.json");
+        return mapper.readValue(bodyStream, Order.class);
+    }
+
+    /**
+     * https://json2csharp.com/json-to-pojo
+     */
+    @SneakyThrows
+    public String getOrderBodyString() {
+        return mapper.writeValueAsString(getOrderBody());
     }
 }

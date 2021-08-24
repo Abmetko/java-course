@@ -55,7 +55,7 @@
 # **`Automation`**
 
 * Автоматизация тестирования rest API с библиотекой [Restassured](https://rest-assured.io/). Сериализация/десериализация с помощью библиотеки [Jackson](https://mvnrepository.com/search?q=com.fasterxml.jackson.core). 
-[POJO классы](https://www.jsonschema2pojo.org/).
+[POJO классы](https://json2csharp.com/json-to-pojo).
 
 * TDD: [TestNG](https://testng.org/doc/). Аннотации. Настрока maven плагина. Создание и конфигурация testng.xml.
 
