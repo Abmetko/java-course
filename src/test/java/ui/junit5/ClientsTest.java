@@ -22,9 +22,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * instance of test class.
  */
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) //TestInstance.Lifecycle.PER_METHOD
 @Slf4j
-@Execution(ExecutionMode.CONCURRENT)
+@Execution(ExecutionMode.CONCURRENT) //ExecutionMode.SAME_THREAD
 @ResourceLock("ui.junit5.ClientsTest")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ClientsTest extends BaseTest {
