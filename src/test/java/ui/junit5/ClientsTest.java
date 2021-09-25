@@ -4,20 +4,25 @@ import com.ui.ContainerHeader;
 import com.ui.Tab;
 import com.ui.enums.MenuItems;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.time.LocalDateTime;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * @see TestInstance.Lifecycle#PER_METHOD - it means that every annotated @test method will have its own
+ * instance of test class -> in our case
+ * @see ClientsTest
+ * The main idea is to make every test method isolated from each other.
+ * @see TestInstance.Lifecycle#PER_CLASS - it means that all annotated @test methods will have the same
+ * instance of test class.
+ */
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Slf4j
 @Execution(ExecutionMode.CONCURRENT)
 @ResourceLock("ui.junit5.ClientsTest")
@@ -27,13 +32,26 @@ public class ClientsTest extends BaseTest {
     private final ContainerHeader containerHeader = new ContainerHeader();
     private final Tab tab = new Tab();
 
+    /**
+     * To demonstrate, how Junit5 use
+     *
+     * @see TestInstance.Lifecycle#PER_METHOD - we use @BeforeEach annotation
+     * before each annotated @test method where it returns hashCode() method of each instance of test class.
+     * At the same time, if we use
+     * @see TestInstance.Lifecycle#PER_CLASS - all calls of hashCode() method, will return the same result,
+     * because we have single object for all annotated @test methods.
+     */
+    @BeforeEach
+    public void beforeEach() {
+        System.out.println(this.hashCode());
+    }
+
     @Order(1)
     @Test
     public void openClientsPage() {
         String name = MenuItems.CLIENTS.value;
         containerHeader.selectHeaderMenu(name);
         assertTrue(containerHeader.isMenuItemSelected(name));
-        System.out.println("open client page [" + this.getClass().getSimpleName() + "]: " + LocalDateTime.now());
     }
 
     @Order(2)
@@ -46,7 +64,7 @@ public class ClientsTest extends BaseTest {
 
     @Order(3)
     @ParameterizedTest
-    @ValueSource(strings = { "Your Dedicated Team", "Web solutions", "Mobile Applications" })
+    @ValueSource(strings = {"Your Dedicated Team", "Web solutions", "Mobile Applications"})
     public void openTab(String tabName) {
         tab.openTab(tabName);
         assertTrue(tab.isTabSelected(tabName));

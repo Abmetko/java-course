@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
-public class Test1 {
+public class DateTimeTest {
 
     public static String text = "13, 2012, 10:30 AM";
 
