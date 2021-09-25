@@ -3,14 +3,13 @@ package ui.junit5;
 import com.ui.ContainerHeader;
 import com.ui.enums.MenuItems;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
-
-import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -22,12 +21,16 @@ public class ServiceTest extends BaseTest {
 
     private final ContainerHeader containerHeader = new ContainerHeader();
 
+    @BeforeEach
+    public void beforeEach() {
+        System.out.println(this.hashCode());
+    }
+
     @Test
     public void openHomePage() {
         String name = MenuItems.HOME.value;
         containerHeader.selectHeaderMenu(name);
         assertTrue(containerHeader.isMenuItemSelected(name));
-        System.out.println("open home page [" + this.getClass().getSimpleName() + "]: " + LocalDateTime.now());
     }
 
     @Test
