@@ -20,8 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * The main idea is to make every test method isolated from each other.
  * @see TestInstance.Lifecycle#PER_CLASS - it means that all annotated @test methods will have the same(single)
  * instance of test class.
- *
- *
  * @see ExecutionMode#SAME_THREAD it's alternatively way to make the same as
  * junit-platform.properties --> junit.jupiter.execution.parallel.mode.classes.default=same_thread
  * what means all annotated @test methods in class will be executed sequentially.
@@ -29,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 @Execution(ExecutionMode.CONCURRENT)
-@ResourceLock("ui.junit5.ClientsTest")
+@ResourceLock("ClientsTest")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ClientsTest extends BaseTest {
 

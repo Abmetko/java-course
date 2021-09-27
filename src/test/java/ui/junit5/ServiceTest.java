@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 @Execution(ExecutionMode.CONCURRENT)
-@ResourceLock("ui.junit5.ServiceTest")
+@ResourceLock("ServiceTest")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ServiceTest extends BaseTest {
 
