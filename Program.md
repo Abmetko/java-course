@@ -59,7 +59,7 @@
 
 * TDD: [TestNG](https://testng.org/doc/). Аннотации. Настрока maven плагина. Создание и конфигурация testng.xml.
 
-* TDD: [Junit5](https://junit.org/junit5/docs/current/user-guide/).
+* TDD: [Junit5](https://junit.org/junit5/docs/current/user-guide/). Аннотации. Параллелизм. Конфигурирование.
 
 * BDD: [Cucumber](https://cucumber.io/docs/installation/java/)
 
@@ -71,4 +71,4 @@
 
 # **`Git`**
 
-* Работа с репозиторием в условиях команды
+* Работа с репозиторием
