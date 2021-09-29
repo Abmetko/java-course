@@ -7,6 +7,8 @@ public class TestRegularExpression {
     private static final String CURRENT_PRICE_1 = "current balance 100,51$";
     private static final String CURRENT_PRICE_2 = "current balance 100.51$";
 
+    private static final String TEST = "Waived by John Doe 03/04/2021, 2:27:23 PM Europe/Warsaw\nReason: test";
+
     //TODO - заменяем все кроме цифр на ""
     public static String getOnlyDigits() {
         return ORDER_NUMBER.replaceAll("[^\\d]", "");
@@ -22,6 +24,8 @@ public class TestRegularExpression {
     }
 
     public static void main(String[] args) {
+        System.out.println(TEST.split("Waived by ")[1].split("\nReason")[0]);
+
         System.out.println(getOnlyDigits());
         System.out.println(getOnlyDigitsAndDotComma(CURRENT_PRICE_1));
         System.out.println(getOnlyDigitsAndDotComma(CURRENT_PRICE_2));
