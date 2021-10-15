@@ -20,7 +20,7 @@ public class DateTimeSorting {
 
         List<LocalDateTime> localDateTimes = new ArrayList<>();
 
-        dates.stream().forEach(date ->
+        dates.forEach(date ->
                 localDateTimes.add(LocalDateTime.parse(date.replaceAll("[ A-z]", ""),
                         DateTimeFormatter.ofPattern("MM/dd/yyyy,HH:mm"))));
 
