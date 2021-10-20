@@ -32,5 +32,7 @@ public class DateTimeSorting {
         List<LocalDateTime> sortedDateTime = new ArrayList<>(actualDateTimeList);
         sortedDateTime.sort(Comparator.naturalOrder());
         System.out.println(actualDateTimeList.equals(sortedDateTime));
+
+        System.out.println(" Failed(45) ".contains("Failed(45)"));
     }
 }
