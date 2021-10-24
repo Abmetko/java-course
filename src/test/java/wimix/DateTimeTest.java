@@ -31,7 +31,6 @@ public class DateTimeTest {
 
         System.out.println(validateDateFormat());
 
-        System.out.println(text.split("\nReason")[0].replaceAll("[ A-z]",""));
+        System.out.println(" Failed (46)\n".trim().replaceAll("[^A-z0-9()\\s]",""));
     }
-
 }
