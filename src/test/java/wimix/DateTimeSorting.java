@@ -29,10 +29,8 @@ public class DateTimeSorting {
 
     public static void main(String[] args) {
         List<LocalDateTime> actualDateTimeList = getLocalDateTime();
-        List<LocalDateTime> sortedDateTime = new ArrayList<>(actualDateTimeList);
-        sortedDateTime.sort(Comparator.naturalOrder());
-        System.out.println(actualDateTimeList.equals(sortedDateTime));
-
-        System.out.println(" Failed(45) ".contains("Failed(45)"));
+        List<LocalDateTime> expectedDateTime = new ArrayList<>(actualDateTimeList);
+        expectedDateTime.sort(Comparator.naturalOrder());
+        System.out.println(actualDateTimeList.equals(expectedDateTime));
     }
 }
