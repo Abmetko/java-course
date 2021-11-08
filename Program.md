@@ -63,7 +63,33 @@
 
 * BDD: [Cucumber](https://cucumber.io/docs/installation/java/)
 
-* Паттерны проектирования тестов: page object, page factory.
+* Паттерны проектирования тестов: structural patterns, data patterns.
+
+* Structural patterns: Page object
+
+* Structural patterns: Available methods
+
+* Structural patterns: Chain of invocations
+
+* Structural patterns: Page factory
+
+* Structural patterns: Page element/Composite
+
+* Structural patterns: Loadable component
+
+* Structural patterns: Strategy
+
+* Data pattern: Value object
+
+* Data pattern: Builder
+
+* Data pattern: Assert Object/Matchers
+
+* Data pattern: Data registry
+
+* Data pattern: Object pool/Flyweight
+
+* Data pattern: Data provider
 
 * Тестирование web приложений с помощью фреймворка [Selenide](https://ru.selenide.org/).
 
