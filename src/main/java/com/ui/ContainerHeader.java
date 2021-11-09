@@ -10,13 +10,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ContainerHeader {
 
-    public final SelenideElement COMPONENT_CONTAINER = $("div.container");
+    public final SelenideElement componentContainer = $("div.container");
 
-    public ElementsCollection getMenuItems(){
-        return COMPONENT_CONTAINER.$$("li > a");
+    public ElementsCollection getMenuItems() {
+        return componentContainer.$$("li > a");
     }
 
-    public SelenideElement getMenuItem(String name){
+    public SelenideElement getMenuItem(String name) {
         return getMenuItems().stream().filter(menuItem -> menuItem.getText().equalsIgnoreCase(name))
                 .findFirst().orElseThrow();
     }
@@ -25,7 +25,7 @@ public class ContainerHeader {
         getMenuItem(name).shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
     }
 
-    public boolean isMenuItemSelected(String name){
+    public boolean isMenuItemSelected(String name) {
         return Objects.requireNonNull(getMenuItem(name).getAttribute("class")).contains("active");
     }
 }

@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Tab {
 
-    public final SelenideElement COMPONENT_CONTAINER = $("div[role='tablist']");
+    public final SelenideElement componentContainer = $("div[role='tablist']");
 
     public ElementsCollection getTabs() {
-        return COMPONENT_CONTAINER.$$("a[role='tab']");
+        return componentContainer.$$("a[role='tab']");
     }
 
     public SelenideElement getTab(String name) {
