@@ -12,18 +12,40 @@ public class Checkbox implements WrapsElement {
         this.element = element;
     }
 
-    public void check() {
-        if (!isChecked()) {
-            element.click();
-        }
+    public Checkbox selectCheckbox() {
+        element.click();
+        return this;
     }
 
-    public boolean isChecked() {
-        return element.is(Condition.checked);
+    public Checkbox unselectCheckbox() {
+        element.click();
+        return this;
+    }
+
+    public Checkbox checkboxShouldBeSelected() {
+        element.shouldBe(Condition.checked);
+        return this;
+    }
+
+    public Checkbox checkboxShouldBeUnselected() {
+        element.shouldNotBe(Condition.checked);
+        return this;
     }
 
     @Override
     public SelenideElement getWrappedElement() {
         return element;
+    }
+
+    public Checkbox when(){
+        return this;
+    }
+
+    public Checkbox then(){
+        return this;
+    }
+
+    public Checkbox and(){
+        return this;
     }
 }

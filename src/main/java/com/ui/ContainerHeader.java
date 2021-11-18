@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ContainerHeader {
 
-    public final SelenideElement componentContainer = $("div.container");
+    public final SelenideElement componentContainer = $(Locators.ROOT);
 
     public ElementsCollection getMenuItems() {
-        return componentContainer.$$("li > a");
+        return componentContainer.$$(Locators.MENU_ITEM);
     }
 
     public SelenideElement getMenuItem(String name) {
@@ -27,5 +27,10 @@ public class ContainerHeader {
 
     public boolean isMenuItemSelected(String name) {
         return Objects.requireNonNull(getMenuItem(name).getAttribute("class")).contains("active");
+    }
+
+    private static class Locators {
+        private static final String ROOT = "div.container";
+        private static final String MENU_ITEM = "li > a";
     }
 }
