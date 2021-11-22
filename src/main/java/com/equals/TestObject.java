@@ -1,7 +1,5 @@
 package com.equals;
 
-import com.enums.OperationSystem;
-
 import java.util.Objects;
 
 public class TestObject {
@@ -12,36 +10,28 @@ public class TestObject {
         this.param = param;
     }
 
-    // TODO - два разных объекта без переопределенного метода equals
+    //два разных объекта без переопределенного метода equals
     public static void equalsFalse() {
         Object obj_1 = new Object();
         Object obj_2 = new Object();
         System.out.println(obj_1.equals(obj_2)); //false
     }
 
-    // TODO - две ссылочные переменные одного объекта
+    //две ссылочные переменные одного объекта
     public static void equalsTrue() {
         Object obj_1 = new Object();
         Object obj_2 = obj_1;
         System.out.println(obj_1.equals(obj_2)); //true
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TestObject that = (TestObject) o;
-        return Objects.equals(param, that.param);
-    }
-
-    // TODO - в классе String метод equals переопределен
+    //в классе String метод equals переопределен
     public static void equalsTrue2() {
         String obj_1 = new String("1");
         String obj_2 = new String("1");
         System.out.println(obj_1.equals(obj_2)); //true
     }
 
-    // TODO - два разных объекта но идентичных по содержанию, c переопределенным методом equals
+    //два разных объекта но идентичных по содержанию, c переопределенным методом equals
     public static void equalsTrueWithOverrideEquals() {
         TestObject obj_1 = new TestObject("test");
         TestObject obj_2 = new TestObject("test");
@@ -53,5 +43,13 @@ public class TestObject {
         equalsTrue();
         equalsTrueWithOverrideEquals();
         equalsTrue2();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TestObject that = (TestObject) o;
+        return Objects.equals(param, that.param);
     }
 }

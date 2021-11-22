@@ -4,7 +4,6 @@ import lombok.SneakyThrows;
 
 import java.util.concurrent.TimeoutException;
 
-
 public class LambdaExpression {
 
     @SneakyThrows

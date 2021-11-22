@@ -46,7 +46,6 @@ public class TestCheckbox {
 
     @Test
     void checkboxesShouldBeChecked2() {
-
         List<Checkbox> checkboxes = $$("input[type='checkbox']")
                 .stream()
                 .map(Checkbox::new)

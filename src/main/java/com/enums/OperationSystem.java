@@ -6,6 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum OperationSystem {
+
     ANDROID("Android"),
     IOS("iOS");
 
