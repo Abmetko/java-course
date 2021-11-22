@@ -13,7 +13,8 @@ public class Tab {
     public final SelenideElement componentContainer = $("div[role='tablist']");
 
     public ElementsCollection getTabs() {
-        return componentContainer.$$("a[role='tab']");
+        return componentContainer
+                .$$("a[role='tab']");
     }
 
     public SelenideElement getTab(String name) {
@@ -25,7 +26,9 @@ public class Tab {
     }
 
     public void openTab(String name) {
-        getTab(name).shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
+        getTab(name)
+                .shouldBe(Condition.enabled)
+                .shouldBe(Condition.visible).click();
     }
 
     public boolean isTabSelected(String name) {

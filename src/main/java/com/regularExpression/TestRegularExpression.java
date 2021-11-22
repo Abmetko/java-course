@@ -9,18 +9,21 @@ public class TestRegularExpression {
 
     private static final String TEST = "Waived by John Doe 03/04/2021, 2:27:23 PM Europe/Warsaw\nReason: test";
 
-    //TODO - заменяем все кроме цифр на ""
+    //заменяем все кроме цифр на ""
     public static String getOnlyDigits() {
-        return ORDER_NUMBER.replaceAll("[^\\d]", "");
+        return ORDER_NUMBER
+                .replaceAll("[^\\d]", "");
     }
 
     public static String getOnlyDigitsAndDotComma(String value) {
-        return value.replaceAll("[^\\d.,]", "");
+        return value
+                .replaceAll("[^\\d.,]", "");
     }
 
-    //TODO - заменяем все цифры на ""
+    //заменяем все цифры на ""
     public static String removeDigitsFromValue(String value) {
-        return value.replaceAll("\\d", "");
+        return value
+                .replaceAll("\\d", "");
     }
 
     public static void main(String[] args) {

@@ -9,7 +9,7 @@ public class TestSingleton {
         System.out.println(mySingleton.hashCode());
 
         MySingleton mySingleton2 = getInstance();
-        // TODO - тем самым удостоверились, что две ссылочные переменные ссылаются на один и тот же объект.
+        //тем самым удостоверились, что две ссылочные переменные ссылаются на один и тот же объект
         System.out.println(mySingleton.equals(mySingleton2));
     }
 }

@@ -10,5 +10,6 @@ public class VarArgs {
 
     public static void main(String[] args) {
         varArgsTest("1", "2", "3");
+        varArgsTest("100");
     }
 }

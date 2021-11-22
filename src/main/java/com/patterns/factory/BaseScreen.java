@@ -4,6 +4,6 @@ public class BaseScreen implements ScreenInterface{
 
     @Override
     public void openScreen() {
-        System.out.println("this is base screen method");
+        System.out.println("this is \"Base\" screen method");
     }
 }
