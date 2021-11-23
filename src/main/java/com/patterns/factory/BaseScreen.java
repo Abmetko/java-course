@@ -1,8 +1,7 @@
 package com.patterns.factory;
 
-public class BaseScreen implements ScreenInterface{
+public class BaseScreen {
 
-    @Override
     public void openScreen() {
         System.out.println("this is \"Base\" screen method");
     }

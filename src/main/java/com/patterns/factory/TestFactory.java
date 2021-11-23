@@ -11,7 +11,8 @@ public class TestFactory {
         BaseScreen loginScreen = factory.getScreen(Screen.SIGN_IN);
         BaseScreen mainScreen = factory.getScreen(Screen.MAIN);
 
-        splashScreen.openScreen();
+
+        splashScreen.openScreen();//использует метод базового класса
         loginScreen.openScreen();
         mainScreen.openScreen();
     }
