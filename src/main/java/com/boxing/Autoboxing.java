@@ -1,6 +1,6 @@
 package com.boxing;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("all")
 public class Autoboxing {
 
     Integer iOb1 = new Integer(7);

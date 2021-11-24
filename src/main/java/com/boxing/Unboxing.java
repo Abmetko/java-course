@@ -1,6 +1,6 @@
 package com.boxing;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("all")
 public class Unboxing {
 
     Integer iOb;
