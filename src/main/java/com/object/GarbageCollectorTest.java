@@ -1,17 +1,17 @@
 package com.object;
 
-public class ObjectCreation {
+public class GarbageCollectorTest {
 
     public static void main(String[] args) {
-        ObjectCreation objectCreation = new ObjectCreation();
-        objectCreation.createLinkToObject();
+        GarbageCollectorTest garbageCollectorTest = new GarbageCollectorTest();
+        garbageCollectorTest.createLinkToObject();
     }
 
     public void createLinkToObject() {
         Object obj1 = new Object();
         Object obj2 = obj1;
 
-        System.out.println(obj1.equals(obj2));
+        System.out.println(obj1.equals(obj2)); //true
     }
 
     //ссылка obj1 терет смысл и будет удалена сборщиком мусора
