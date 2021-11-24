@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverRunner.getSelenideProxy;
 
-final class ProxyServerUsageTest {
+final class ProxyServerInjectCookieTest {
 
     @Test
     void testCookieInjection() {
