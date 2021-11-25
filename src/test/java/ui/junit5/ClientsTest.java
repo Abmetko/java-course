@@ -3,10 +3,7 @@ package ui.junit5;
 import com.ui.ContainerHeader;
 import com.ui.Tab;
 import com.ui.enums.MenuItems;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.parallel.Execution;
-import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -14,19 +11,26 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * @see TestInstance.Lifecycle#PER_METHOD - it means that every annotated @test method will have its own
- * instance of test class -> in our case
- * @see ClientsTest
+ * Two types of running test methods:
+ * <pre>{@code
+ *     @TestInstance(TestInstance.Lifecycle.PER_METHOD)
+ * }</pre>
+ * it means that every annotated @Test method will have its own
+ * instance of test class, in our case it's {@link ClientsTest} class.
  * The main idea is to make every test method isolated from each other.
- * @see TestInstance.Lifecycle#PER_CLASS - it means that all annotated @test methods will have the same(single)
- * instance of test class.
- * @see ExecutionMode#SAME_THREAD it's alternatively way to make the same as
- * junit-platform.properties --> junit.jupiter.execution.parallel.mode.classes.default=same_thread
- * what means all annotated @test methods in class will be executed sequentially.
+ * <pre>{@code
+ *     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+ * }</pre>
+ * it means that all annotated @Test methods will have the same(single) instance of test class.
+ * <pre>{@code
+ *     @Execution(ExecutionMode.SAME_THREAD)
+ * }</pre>
+ * it's alternatively way to make the same as junit-platform.properties, with property
+ * junit.jupiter.execution.parallel.mode.classes.default=same_thread
+ * what means all annotated @Test methods in class will be executed sequentially.
  */
 
-@Slf4j
-@Execution(ExecutionMode.CONCURRENT)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) //just to demonstrate the annotation here
 @ResourceLock("ClientsTest")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ClientsTest extends BaseTest {
@@ -36,12 +40,11 @@ public class ClientsTest extends BaseTest {
 
     /**
      * To demonstrate, how Junit5 use
-     *
-     * @see TestInstance.Lifecycle#PER_METHOD - we use @BeforeEach annotation
-     * before each annotated @test method where it returns hashCode() method of each instance of test class.
+     * {@link TestInstance.Lifecycle#PER_METHOD} - we use @BeforeEach annotation
+     * before each annotated @Test method where it returns hashCode() method of each instance of test class.
      * At the same time, if we use
-     * @see TestInstance.Lifecycle#PER_CLASS - all calls of hashCode() method, will return the same result,
-     * because we have single object for all annotated @test methods.
+     * {@link TestInstance.Lifecycle#PER_CLASS} - all calls of hashCode() method, will return the same result,
+     * because we have single object for all annotated @Test methods.
      */
     @BeforeEach
     public void beforeEach() {
@@ -64,6 +67,7 @@ public class ClientsTest extends BaseTest {
         assertTrue(containerHeader.isMenuItemSelected(name));
     }
 
+    @Disabled
     @Order(3)
     @ParameterizedTest
     @ValueSource(strings = {"Your Dedicated Team", "Web solutions", "Mobile Applications"})
