@@ -18,18 +18,15 @@ public class CastTest {
      * char = 2 байта
      */
 
-    public static short shortVariable = 10;
-    public static int intVariable = 20;
-
-    public static short shortVariable2 = 10;
-    public static int intVariable2 = 20;
+    public static int intVariable = 10;
+    public static long longVariable = 10;
 
     public static void main(String[] args) {
 
         //размещаем в больший контейнер содержимое меньшего контейнера - автоматическое приведение типов
-        intVariable = shortVariable;
+        longVariable = intVariable;
 
         //размещаем в меньший контейнер содержимое большего контейнера - явное приведение типов
-        shortVariable2 = (short) intVariable2;
+        intVariable = (int) longVariable;
     }
 }

@@ -12,6 +12,9 @@ public class GarbageCollectorTest {
         Object obj2 = obj1;
 
         System.out.println(obj1.equals(obj2)); //true
+
+        Object obj3 = new Object();
+
     }
 
     //ссылка obj1 терет смысл и будет удалена сборщиком мусора
