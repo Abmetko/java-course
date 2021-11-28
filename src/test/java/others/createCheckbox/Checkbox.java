@@ -1,4 +1,4 @@
-package wimix.createCheckbox;
+package others.createCheckbox;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

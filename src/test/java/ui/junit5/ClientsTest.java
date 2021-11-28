@@ -30,7 +30,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * what means all annotated @Test methods in class will be executed sequentially.
  */
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS) //just to demonstrate the annotation here
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+//just to demonstrate the annotation here (it's already defined in super class)
 @ResourceLock("ClientsTest")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ClientsTest extends BaseTest {

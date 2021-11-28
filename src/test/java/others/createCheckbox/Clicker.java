@@ -1,4 +1,4 @@
-package wimix.createCheckbox;
+package others.createCheckbox;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

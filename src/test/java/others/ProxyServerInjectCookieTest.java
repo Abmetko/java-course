@@ -1,4 +1,4 @@
-package wimix;
+package others;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.proxy.SelenideProxyServer;

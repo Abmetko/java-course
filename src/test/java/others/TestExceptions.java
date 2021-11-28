@@ -1,4 +1,4 @@
-package wimix;
+package others;
 
 public class TestExceptions {
 
