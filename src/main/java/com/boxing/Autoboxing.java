@@ -25,4 +25,8 @@ public class Autoboxing {
     public static void method(Integer iOb) {
         System.out.println("Integer: " + iOb);
     }
+
+    public static void method(int iOb) {
+        System.out.println("Integer: " + iOb);
+    }
 }

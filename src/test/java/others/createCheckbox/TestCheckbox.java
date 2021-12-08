@@ -1,6 +1,8 @@
 package others.createCheckbox;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.configuration.AppConfiguration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -12,13 +14,13 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.addListener;
 
-
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestCheckbox {
 
     @BeforeAll
     void setUp() {
         addListener(new Clicker());
+        Configuration.browser = AppConfiguration.getString("selenide.browser");
         Selenide.open("https://smartwebby.com/PHP/Phptips2.asp");
     }
 

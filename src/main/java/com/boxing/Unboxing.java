@@ -9,6 +9,8 @@ public class Unboxing {
     Boolean bOb;
 
     //TODO - при присвоении
+
+    //присвоение без автораспаковки
     int i = iOb.intValue();
     double d = dOb.doubleValue();
     char c = cOb.charValue();
@@ -31,6 +33,10 @@ public class Unboxing {
         //сравнение с автораспаковкой
         System.out.println(iOb1 > iOb2);
 
+
+
+
+
         /*
         В первом случае фактически вызывается статичный метод java.lang.Integer.valueOf(int),
         который кэширует значения от -128 до 127 (верхнюю границу можно изменять) и
@@ -38,10 +44,13 @@ public class Unboxing {
         и готовых к использованию объектов) --> true. Во втором происходит явное создание объектов --> false,
         следовательно они имеют разные ссылки.
          */
+
+        //#1
         Integer iOb3 = 100;
         Integer iOb4 = 100;
         System.out.println(iOb3 == iOb4);//true
 
+        //#2
         Integer iOb5 = new Integer(120);
         Integer iOb6 = new Integer(120);
         System.out.println(iOb5 == iOb6);//false

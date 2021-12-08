@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SelectClasses(APITest.class)
-public class TestRunner {
+public class Runner {
 
     @BeforeAll
     static void setUp1() {
