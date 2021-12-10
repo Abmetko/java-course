@@ -25,6 +25,7 @@ public class HashMapTest {
          */
         for (Map.Entry<String, String> set : map.entrySet()) {
             System.out.printf("%s: %s%n", set.getKey(), set.getValue());
+
         }
     }
 }
