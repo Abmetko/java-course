@@ -11,17 +11,19 @@ public class TestBuilder {
         PhoneBuilder phoneBuilder = new PhoneBuilder();
 
         MobilePhone mobilePhone = phoneBuilder
+                .when()
                 .setColor(Colors.GREY.getValue())
                 .setOsType(OperationSystem.ANDROID.getValue())
                 .setOsVersion(SystemVersion.OREO.getValue())
                 .isTablet(false)
                 .setDpi(Dpi.XHDPI.name())
+                .then()
                 .build();
 
         //текущее значение поля объекта
         System.out.printf("Android version is '%s' %n", mobilePhone.osVersion);
 
-        //изменяем значение поля
+        //изменяем значение поля - тем самым вносим изменение в существующий объект класса MobilePhone
         phoneBuilder.setOsVersion(SystemVersion.NOUGAT.getValue());
 
         //проверяем измененное значение поля

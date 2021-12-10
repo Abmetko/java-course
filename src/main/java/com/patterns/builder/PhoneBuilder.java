@@ -33,6 +33,18 @@ public class PhoneBuilder {
         return this;
     }
 
+    public PhoneBuilder when() {
+        return this;
+    }
+
+    public PhoneBuilder then() {
+        return this;
+    }
+
+    public PhoneBuilder and() {
+        return this;
+    }
+
     public MobilePhone build() {
         return mobilePhone;
     }

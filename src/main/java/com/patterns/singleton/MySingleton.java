@@ -2,7 +2,7 @@ package com.patterns.singleton;
 
 public class MySingleton {
 
-    private static MySingleton instance = null;
+    private static MySingleton instance;
 
     private MySingleton() {
     }
