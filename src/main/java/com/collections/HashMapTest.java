@@ -9,7 +9,8 @@ public class HashMapTest {
         Map<String, String> map = new HashMap<>();
         map.put("first name", "Jack");
         map.put("last name", "Black");
-
+        map.put("age", "50");
+        map.put("weight", "100");
         /*
          * A map entry (key-value pair). The Map.entrySet method returns a collection-view of the map,
          * whose elements are of this class. The only way to obtain a reference to a map entry is from
