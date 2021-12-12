@@ -1,9 +1,9 @@
 package com.patterns.strategy;
 
-public class UserSignUp implements SignUpStrategy {
+public class UserStrategy implements Strategy {
 
     @Override
-    public void makeSignUp() {
+    public void signUp() {
         System.out.println("\"User\" sign up");
     }
 }
