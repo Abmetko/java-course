@@ -2,11 +2,11 @@ package com.patterns.strategy;
 
 public abstract class BaseUser {
 
-    private final SignUpStrategy SIGN_UP_STRATEGY;
+    private final SignUpStrategy signUpStrategy;
 
     //устанавливаем тип стратегии которая в дальнейшем будет использована для метода регистрации
     public BaseUser(SignUpStrategy signUpStrategy) {
-        this.SIGN_UP_STRATEGY = signUpStrategy;
+        this.signUpStrategy = signUpStrategy;
     }
 
     public void makeSignIn() {
@@ -15,7 +15,7 @@ public abstract class BaseUser {
 
     //уникальный метод, характерный для выбранной стратегии
     public void makeSignUp() {
-        SIGN_UP_STRATEGY.makeSignUp();
+        signUpStrategy.makeSignUp();
     }
 
     public void makeSignOut() {
