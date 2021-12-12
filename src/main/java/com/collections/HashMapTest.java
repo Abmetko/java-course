@@ -11,6 +11,7 @@ public class HashMapTest {
         map.put("last name", "Black");
         map.put("age", "50");
         map.put("weight", "100");
+
         /*
          * A map entry (key-value pair). The Map.entrySet method returns a collection-view of the map,
          * whose elements are of this class. The only way to obtain a reference to a map entry is from
@@ -25,7 +26,6 @@ public class HashMapTest {
          */
         for (Map.Entry<String, String> set : map.entrySet()) {
             System.out.printf("%s: %s%n", set.getKey(), set.getValue());
-
         }
     }
 }
