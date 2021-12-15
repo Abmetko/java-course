@@ -8,7 +8,7 @@ public class SignUpScreen {
         this.signUpStrategy = signUpStrategy;
     }
 
-    public void signUp(){
+    public void signUp() {
         signUpStrategy.signUp();
     }
 }
