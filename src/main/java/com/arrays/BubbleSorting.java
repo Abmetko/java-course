@@ -54,4 +54,11 @@ public class BubbleSorting {
 
         System.out.println(Arrays.toString(newArray));
     }
+
+    /*
+    Максимальное значение в массиве
+    */
+    public static void getMaxValueInArray() {
+
+    }
 }
