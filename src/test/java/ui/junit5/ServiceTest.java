@@ -20,6 +20,7 @@ public class ServiceTest extends BaseTest {
 
     @BeforeEach
     public void beforeEach() {
+        System.out.println("Service test class: " + threadName);
         System.out.println(this.hashCode());
     }
 

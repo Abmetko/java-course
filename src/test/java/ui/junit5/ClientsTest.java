@@ -49,6 +49,7 @@ public class ClientsTest extends BaseTest {
      */
     @BeforeEach
     public void beforeEach() {
+        System.out.println("Clients test class: " + threadName);
         System.out.println(this.hashCode());
     }
 
