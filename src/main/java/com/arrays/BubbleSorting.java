@@ -7,8 +7,7 @@ public class BubbleSorting {
     static int[] array = {1, 5, -9, 0, -12, 4, 6, 34};
 
     public static void main(String[] args) {
-        createNewArrayWithEvenNumbers();
-        bubbleSorting();
+        getMaxValueInArray();
     }
 
     public static void bubbleSorting() {
@@ -36,8 +35,8 @@ public class BubbleSorting {
     public static void createNewArrayWithEvenNumbers() {
         int arraySize = 0;
 
-        for (int j : array) {
-            if (j % 2 == 0) {
+        for (int i : array) {
+            if (i % 2 == 0) {
                 arraySize++;
             }
         }
@@ -45,9 +44,9 @@ public class BubbleSorting {
         int[] newArray = new int[arraySize];
         int counter = 0;
 
-        for (int j : array) {
-            if (j % 2 == 0) {
-                newArray[counter] = j;
+        for (int i : array) {
+            if (i % 2 == 0) {
+                newArray[counter] = i;
                 counter++;
             }
         }
@@ -55,10 +54,13 @@ public class BubbleSorting {
         System.out.println(Arrays.toString(newArray));
     }
 
-    /*
-    Максимальное значение в массиве
-    */
+    //foreach
     public static void getMaxValueInArray() {
+        int[] arr = new int[10];
 
+        for (int i : arr) {
+            System.out.println(i);
+        }
     }
+
 }
