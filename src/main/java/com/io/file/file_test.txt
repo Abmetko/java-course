@@ -1,4 +1,4 @@
-Name,Age
-Tom,21
-Nick,23
-John,20
+first name,last name,age
+Jack,Black,21
+Nick,White,23
+John,Harris,20

@@ -21,25 +21,29 @@ public class FileTest {
 
         List<Object[]> users = new ArrayList<>();
 
-        Object[] tom = {"Tom", 21};
-        Object[] nick = {"Nick", 23};
-        Object[] john = {"John", 20};
+        Object[] user1 = {"Jack", "Black", 21};
+        Object[] user2 = {"Nick", "White", 23};
+        Object[] user3 = {"John", "Harris", 20};
 
-        users.add(tom);
-        users.add(nick);
-        users.add(john);
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append("Name");
+        stringBuilder.append("first name");
         stringBuilder.append(",");
-        stringBuilder.append("Age");
+        stringBuilder.append("last name");
+        stringBuilder.append(",");
+        stringBuilder.append("age");
 
         for (Object[] user : users) {
             stringBuilder.append("\n");
             stringBuilder.append(user[0]);
             stringBuilder.append(",");
             stringBuilder.append(user[1]);
+            stringBuilder.append(",");
+            stringBuilder.append(user[2]);
         }
         printWriter.print(stringBuilder);
         printWriter.close();
