@@ -7,19 +7,17 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class OutputStreamTest {
+public class OutputInputStreamTest {
 
     private static final String FILE_PATH = "src/main/java/com/serialization/outputStream/file.txt";
 
     @SneakyThrows
     public static void main(String[] args) {
-        FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(FILE_PATH));
         objectOutputStream.writeObject(new MyClass("Tom", "CA", 80));
         objectOutputStream.close();
 
-        FileInputStream fileInputStream = new FileInputStream(FILE_PATH);
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(FILE_PATH));
         MyClass obj = (MyClass) objectInputStream.readObject();
         objectInputStream.close();
 
