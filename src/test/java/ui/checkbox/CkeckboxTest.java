@@ -26,7 +26,8 @@ public class CkeckboxTest extends JUnit5TestRunner {
                 .stream()
                 .map(Checkbox::new)
                 .collect(Collectors.toList());
-        //checkbox implements WebElement
+        //TODO - just to demonstrate that checkbox implements WebElement
+        System.out.println(checkboxes.get(0).getWrappedElement().isDisplayed());
 
         assertTrue(checkboxes.get(0).isChecked());
         assertTrue(checkboxes.get(1).isChecked());

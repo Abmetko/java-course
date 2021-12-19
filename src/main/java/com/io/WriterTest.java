@@ -44,6 +44,7 @@ public class WriterTest {
             for (String s : array) {
                 printStream.println(s);
             }
+
             printStream.close();
         } catch (IOException e) {
             e.printStackTrace();

@@ -13,8 +13,8 @@ public class FileTest {
 
     @SneakyThrows
     @SuppressWarnings("ALL")
-    public static void main(String[] args) {
-        File file = new File("src/main/java/com/io/file/file_test.txt");
+    public static void readWrite() {
+        File file = new File("src/main/java/com/io/file/file_test.CSV");
         file.createNewFile();
 
         PrintWriter printWriter = new PrintWriter(file);
@@ -31,21 +31,23 @@ public class FileTest {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append("first name");
-        stringBuilder.append(",");
-        stringBuilder.append("last name");
-        stringBuilder.append(",");
-        stringBuilder.append("age");
+        stringBuilder
+                .append("first name")
+                .append(",")
+                .append("last name")
+                .append(",")
+                .append("age");
 
         for (Object[] user : users) {
-            stringBuilder.append("\n");
-            stringBuilder.append(user[0]);
-            stringBuilder.append(",");
-            stringBuilder.append(user[1]);
-            stringBuilder.append(",");
-            stringBuilder.append(user[2]);
+            stringBuilder
+                    .append("\n")
+                    .append(user[0])
+                    .append(",")
+                    .append(user[1])
+                    .append(",")
+                    .append(user[2]);
         }
-        printWriter.print(stringBuilder);
+        printWriter.print(stringBuilder.toString());
         printWriter.close();
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
@@ -55,5 +57,9 @@ public class FileTest {
             System.out.println(string);
         }
         bufferedReader.close();
+    }
+
+    public static void main(String[] args) {
+        readWrite();
     }
 }

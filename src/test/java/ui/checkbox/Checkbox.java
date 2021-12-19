@@ -7,18 +7,20 @@ import org.openqa.selenium.WrapsElement;
 
 public class Checkbox implements WrapsElement {
 
-    private final SelenideElement ELEMENT;
+    private final SelenideElement checkbox;
 
     public Checkbox(SelenideElement element) {
-        this.ELEMENT = element;
+        this.checkbox = element;
     }
 
     public void toggle() {
-        ELEMENT.click();
+        checkbox
+                .click();
     }
 
     public boolean isChecked() {
-        return ELEMENT.is(Condition.checked);
+        return checkbox
+                .is(Condition.checked);
     }
 
     public void check() {
@@ -35,6 +37,6 @@ public class Checkbox implements WrapsElement {
 
     @Override
     public WebElement getWrappedElement() {
-        return ELEMENT;
+        return checkbox;
     }
 }
