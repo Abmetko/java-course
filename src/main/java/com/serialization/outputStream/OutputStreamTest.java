@@ -9,14 +9,16 @@ import java.io.ObjectOutputStream;
 
 public class OutputStreamTest {
 
+    private static final String FILE_PATH = "src/main/java/com/serialization/outputStream/file.txt";
+
     @SneakyThrows
     public static void main(String[] args) {
-        FileOutputStream fileOutputStream = new FileOutputStream("temp");
+        FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(new MyClass("Tom", "CA", 80));
         objectOutputStream.close();
 
-        FileInputStream fileInputStream = new FileInputStream("temp");
+        FileInputStream fileInputStream = new FileInputStream(FILE_PATH);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         MyClass obj = (MyClass) objectInputStream.readObject();
         objectInputStream.close();
