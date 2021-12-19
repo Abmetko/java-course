@@ -69,7 +69,6 @@ public class ClientsTest extends BaseTest {
         assertTrue(containerHeader.isMenuItemSelected(name));
     }
 
-    @Disabled
     @Order(3)
     @ParameterizedTest
     @ValueSource(strings = {"Your Dedicated Team", "Web solutions", "Mobile Applications"})
