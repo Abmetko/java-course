@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 public class StreamAPI_Test {
 
     static List<Integer> list = Arrays.asList(10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
