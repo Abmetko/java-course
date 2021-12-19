@@ -9,15 +9,15 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class FileTest {
 
-    @SneakyThrows
-    @SuppressWarnings("ALL")
-    public static void readWrite() {
-        File file = new File("src/main/java/com/io/file/file_test.CSV");
-        file.createNewFile();
+    public static final File FILE = new File("src/main/java/com/io/file/file_test.CSV");
+    public static final StringBuilder STRING_BUILDER = new StringBuilder();
 
-        PrintWriter printWriter = new PrintWriter(file);
+    @SneakyThrows
+    public static void writeDataInFile() {
+        PrintWriter printWriter = new PrintWriter(FILE);
 
         List<Object[]> users = new ArrayList<>();
 
@@ -29,9 +29,7 @@ public class FileTest {
         users.add(user2);
         users.add(user3);
 
-        StringBuilder stringBuilder = new StringBuilder();
-
-        stringBuilder
+        STRING_BUILDER
                 .append("first name")
                 .append(",")
                 .append("last name")
@@ -39,7 +37,7 @@ public class FileTest {
                 .append("age");
 
         for (Object[] user : users) {
-            stringBuilder
+            STRING_BUILDER
                     .append("\n")
                     .append(user[0])
                     .append(",")
@@ -47,12 +45,34 @@ public class FileTest {
                     .append(",")
                     .append(user[2]);
         }
-        printWriter.print(stringBuilder.toString());
+        printWriter.print(STRING_BUILDER);
         printWriter.close();
+    }
 
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+    @SneakyThrows
+    public static void createFile() {
+        FILE.createNewFile();
+
+        PrintWriter printWriter = new PrintWriter(FILE);
+
+        List<Object[]> users = new ArrayList<>();
+
+        Object[] user1 = {"Jack", "Black", 21};
+        Object[] user2 = {"Nick", "White", 23};
+        Object[] user3 = {"John", "Harris", 20};
+
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+    }
+
+    @SneakyThrows
+    public static void readDataFromFile() {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE));
         Object string;
+
         bufferedReader.readLine();//skip the 1st line with columns headers
+
         while ((string = bufferedReader.readLine()) != null) {
             System.out.println(string);
         }
@@ -60,6 +80,8 @@ public class FileTest {
     }
 
     public static void main(String[] args) {
-        readWrite();
+        createFile();
+        writeDataInFile();
+        readDataFromFile();
     }
 }
