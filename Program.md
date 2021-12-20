@@ -60,6 +60,8 @@
 
 * Рекурсия.
 
+* Работа с датой и временем: `Date`, `Calendar`, `DateTimeFormatter`, `SimpleDateFormat`, `LocalDateTime`.
+
 # **`Maven`**
 
 * Жизненный цикл Maven.
