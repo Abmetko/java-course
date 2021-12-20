@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public class FileTest2 {
+public class FileTestImproved {
 
     private static final File FILE = new File("src/main/java/com/io/file/file_test2.CSV");
     private static final StringBuilder STRING_BUILDER = new StringBuilder();
@@ -60,12 +60,10 @@ public class FileTest2 {
     public static void readDataFromFile() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE));
 
-        Object string;
-
         bufferedReader.readLine();//skip the 1st line with columns headers
 
-        while ((string = bufferedReader.readLine()) != null) {
-            System.out.println(string);
+        while (bufferedReader.ready()) {
+            System.out.println(bufferedReader.readLine());
         }
         bufferedReader.close();
     }
