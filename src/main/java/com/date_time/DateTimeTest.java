@@ -25,12 +25,12 @@ public class DateTimeTest {
         System.out.println("\n");
 
         // #1 Извлекли строку с датой и временем из ui элемента с целью проверить на корректность формата данных
-        System.out.println("Valid case: " + validateDateTimeFormat2("E MMM dd HH:mm:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
-        System.out.println("Invalid case: " + validateDateTimeFormat2("E MMMM dd HH:mm:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
-        System.out.println("Invalid case: " + validateDateTimeFormat2("E MMMM dd HH/mm/ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
-        System.out.println("Invalid case: " + validateDateTimeFormat2("E MMMM dd HH:M:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
-        System.out.println("Invalid case: " + validateDateTimeFormat2("MMMM dd HH:M:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
-        System.out.println("Invalid case: " + validateDateTimeFormat2("E MMMM dd HH:M:ss yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
+        System.out.println("Valid case: " + validateDateTimeFormat("E MMM dd HH:mm:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
+        System.out.println("Invalid case: " + validateDateTimeFormat("E MMMM dd HH:mm:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
+        System.out.println("Invalid case: " + validateDateTimeFormat("E MMMM dd HH/mm/ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
+        System.out.println("Invalid case: " + validateDateTimeFormat("E MMMM dd HH:M:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
+        System.out.println("Invalid case: " + validateDateTimeFormat("MMMM dd HH:M:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
+        System.out.println("Invalid case: " + validateDateTimeFormat("E MMMM dd HH:M:ss yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
 
         System.out.println("\n");
         //#2 Извлекли строки ui элементов, и надо проверить, что элементы с датами расположены в правильном порядке на экране
@@ -49,7 +49,7 @@ public class DateTimeTest {
      E, dd MMM yyyy HH:mm:ss z	Tue, 02 Jan 2018 18:07:59 IST
      E MMM dd HH:mm:ss z yyyy    Mon Dec 27 21:28:32 MSK 2021
     */
-    public static boolean validateDateTimeFormat2(String pattern, String str) {
+    public static boolean validateDateTimeFormat(String pattern, String str) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
         try {
             LocalDateTime.parse(str, dateTimeFormatter);
@@ -65,7 +65,7 @@ public class DateTimeTest {
             actualList.add(LocalDateTime.parse(date, DateTimeFormatter.ofPattern("MM/dd/yyyy, HH:mm")));
         }
         List<LocalDateTime> expectedList = new ArrayList<>(actualList);
-        expectedList.sort(Comparator.naturalOrder());
+        expectedList.sort(Comparator.naturalOrder());//Comparator.reverseOrder()
 
         return actualList.equals(expectedList);
     }
