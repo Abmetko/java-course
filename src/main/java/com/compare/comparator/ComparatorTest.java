@@ -35,7 +35,7 @@ class CompareDevices implements Comparator<Device> {
     @Override
     public int compare(Device o1, Device o2) {
         int api = o1.apiVersion - o2.apiVersion;
-        if ( api != 0) {
+        if (api != 0) {
             return api;
         } else return o1.osVersion.compareTo(o2.osVersion);
     }
@@ -44,15 +44,13 @@ class CompareDevices implements Comparator<Device> {
 public class ComparatorTest {
 
     public static void main(String[] args) {
-        CompareDevices compareDevices = new CompareDevices();
-
-        Device device1 = new Device(11.0, "Android 11", 29);
+        Device device1 = new Device(11.0, "Android 11", 29);//30
         Device device2 = new Device(8.1, "Oreo", 27);
         Device device3 = new Device(9.0, "Pie", 28);
         Device device4 = new Device(10.0, "Android 10", 29);
         Device device5 = new Device(8.0, "Oreo", 26);
 
-        Set<Device> set = new TreeSet<>(compareDevices);
+        Set<Device> set = new TreeSet<>(new CompareDevices());
         set.add(device1);
         set.add(device2);
         set.add(device3);
