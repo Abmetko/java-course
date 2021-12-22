@@ -20,7 +20,10 @@ public class ExceptionsTest {
     }
 
     public static void main(String[] args) throws NumberFoundException {
-//        calculate(new int[]{1, 4, 5, 6, 7}, 3);
+//        calculate(new int[]{1, 4, 5, 6, 7}, 5);
+//        checkNumbers(0);
+
         checkNumbers(0);
+        calculate(new int[]{1, 4, 5, 6, 7}, 5);
     }
 }
