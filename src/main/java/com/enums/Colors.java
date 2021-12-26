@@ -14,4 +14,8 @@ public enum Colors {
     public String getValue() {
         return value;
     }
+
+    public static void main(String[] args) {
+        System.out.println(Colors.GREY.getValue());
+    }
 }
