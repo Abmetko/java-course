@@ -2,7 +2,7 @@ package com.lambda;
 
 public class Test {
 
-    public static void test_2(){
+    public static void test_2() {
         SimplestInterface simplestInterface1 = () -> {
             System.out.println("This is a simple implementation of lambda");
         };
