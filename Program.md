@@ -36,6 +36,8 @@
 
 * Паттерн: strategy.
 
+* Паттерн: object pool.
+
 * Ввод/вывод данных.
 
 * Работа с CSV файлом. Библиотека [OpenCSV](http://opencsv.sourceforge.net/).
