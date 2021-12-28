@@ -13,6 +13,7 @@ public class AnonymousTest {
     */
 
     public static void main(String[] args) {
+
         Dog dog = new Dog() {
             public String getColor() {
                 return "Это метод, реализующий метод интерфейса";
@@ -22,9 +23,7 @@ public class AnonymousTest {
 
 
         //альтернативная реализация с помощью лямбда выражения
-        Dog dog2 = () -> {
-            return "Это метод, реализуемый с помощью лямбда выражения";
-        };
+        Dog dog2 = () -> "Это метод, реализуемый с помощью лямбда выражения";
         System.out.println(dog2.getColor());
     }
 }

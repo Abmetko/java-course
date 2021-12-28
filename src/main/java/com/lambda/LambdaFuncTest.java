@@ -23,37 +23,24 @@ public class LambdaFuncTest {
 
 
 
-
-
-
-
-
-
     public static int multiPurposeMethod(MyInterface2 myInterface, int a, int b) {
         return myInterface.calculate(a, b);
     }
 
     public static void main(String[] args) {
-        //вариант использования метода 1
+        //вариант использования метода 1 (с return в фигурных скобках)
         multiPurposeMethod((a, b) -> {
             return a * b;
         }, 10, 10);
 
         //вариант использования метода 2
-        multiPurposeMethod((a, b) -> {
-            return a / b;
-        }, 10, 10);
+        multiPurposeMethod((a, b) -> a / b, 10, 10);
 
         //вариант использования метода 3
-        multiPurposeMethod((a, b) -> {
-            return (int) Math.sqrt(a + b);
-        }, 10, 10);
+        multiPurposeMethod((a, b) -> (int) Math.sqrt(a + b), 10, 10);
 
         //вариант использования метода 4
-        multiPurposeMethod((a, b) -> {
-            return a - b;
-        }, 10, 10);
-
+        System.out.println(multiPurposeMethod((a, b) -> a - b, 10, 10));
 
 
         //вариант развернутый - с реализацией анонимного класса, который реализует интерфейс MyInterface2
