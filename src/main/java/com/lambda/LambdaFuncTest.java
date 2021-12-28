@@ -53,5 +53,16 @@ public class LambdaFuncTest {
         multiPurposeMethod((a, b) -> {
             return a - b;
         }, 10, 10);
+
+
+
+        //вариант развернутый - с реализацией анонимного класса, который реализует интерфейс MyInterface2
+        MyInterface2 myInterface2 = new MyInterface2() {
+            @Override
+            public int calculate(int a, int b) {
+                return a * b;
+            }
+        };
+        myInterface2.calculate(10, 10);
     }
 }

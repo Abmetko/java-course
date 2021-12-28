@@ -1,5 +1,8 @@
 package com.exceptions;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ExceptionsTest {
 
     public static void calculate(int[] array, int index) {

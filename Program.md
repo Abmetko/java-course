@@ -44,6 +44,8 @@
 
 * Функциолнальный интерфейс. Лямбда выражения.
 
+* Анонимный класс.
+
 * Сериализация и десериализация объекта. Библиотека Jackson, класс [ObjectMapper](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind).
 
 * Stream API: конвейерные методы, терминальные.
