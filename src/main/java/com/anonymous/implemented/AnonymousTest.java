@@ -1,6 +1,6 @@
 package com.anonymous.implemented;
 
-@FunctionalInterface
+
 interface Dog {
 
     public String getColor();
