@@ -8,23 +8,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+Используя BufferedReader()
 Извлечь данные из файла с помощью stream API, поместить их в новую коллекцию.
 Далее, с помощью stream API вывести каждый элемент коллекции на печать.
  */
 public class HomeWork_1 {
 
-    public static void main(String[] args) throws IOException {
-        List<String> list = new ArrayList<>();
+    private static final List<String> LIST = new ArrayList<>();
 
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/java/com/homework/names.txt"));
+    private static BufferedReader bufferedReader;
+
+    public static void readPrintValuesWithLoop() throws IOException {
+        bufferedReader = new BufferedReader(new FileReader("src/main/java/com/homework/names.txt"));
+
+        bufferedReader.readLine();//skip header
+
+        while (bufferedReader.ready()) {
+            LIST.add(bufferedReader.readLine());
+        }
+
+        for (String i : LIST) {
+            System.out.println(i);
+        }
+        bufferedReader.close();
+        LIST.clear();
+    }
+
+    public static void readPrintValuesWithStream() throws IOException {
+        bufferedReader = new BufferedReader(new FileReader("src/main/java/com/homework/names.txt"));
 
         bufferedReader.readLine();//skip header
 
         bufferedReader
                 .lines()
-                .forEach(list::add);
+                .forEach(LIST::add);
         bufferedReader.close();
 
-        list.forEach(System.out::println);
+        LIST.forEach(System.out::println);
+        LIST.clear();
     }
+
+    public static void main(String[] args) throws IOException {
+        readPrintValuesWithLoop();
+        readPrintValuesWithStream();
+    }
+
 }
