@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-Используя BufferedReader()
+Используя BufferedReader(), с помощью цикла положить каждую строку из файла в объект коллекции.
+Далее, с помощью цикла вывести на печать каждый элемент коллекции.
 Извлечь данные из файла с помощью stream API, поместить их в новую коллекцию.
 Далее, с помощью stream API вывести каждый элемент коллекции на печать.
  */
@@ -52,5 +53,4 @@ public class HomeWork_1 {
         readPrintValuesWithLoop();
         readPrintValuesWithStream();
     }
-
 }
