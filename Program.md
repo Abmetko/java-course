@@ -72,6 +72,8 @@
 
 * Работа с датой и временем: `Date`, `Calendar`, `DateTimeFormatter`, `SimpleDateFormat`, `LocalDateTime`.
 
+* Работа с файлами `.properties`
+
 # **`Maven`**
 
 * Жизненный цикл Maven.
