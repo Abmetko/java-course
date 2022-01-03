@@ -82,5 +82,9 @@ public class DateTimeTest {
         String expectedDateTime = simpleDateFormat.format(calendar.getTime());
 
         return expectedDateTime.equals(actualDateTime);
+        /*
+        Проверили, что фактическое значение на UI соответствует
+        требованиям задачи, т.е. текущая дата/время плюс 6 месяцев.
+        */
     }
 }

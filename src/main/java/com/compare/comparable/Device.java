@@ -15,26 +15,6 @@ public class Device implements Comparable<Device> {
         this.apiVersion = apiVersion;
     }
 
-    //TreeSet - это коллекция с автоматической сортировкой. Хранящая уникальные объекты.
-    public static void main(String[] args) {
-        Device device1 = new Device(11.0, "Android 11", 30);
-        Device device2 = new Device(8.1, "Oreo", 27);
-        Device device3 = new Device(9.0, "Pie", 28);
-        Device device4 = new Device(10.0, "Android 10", 29);
-        Device device5 = new Device(8.0, "Oreo", 26);
-
-        Set<Device> set = new TreeSet<>();
-        set.add(device1);
-        set.add(device2);
-        set.add(device3);
-        set.add(device4);
-        set.add(device5);
-
-        for (Device d : set) {
-            System.out.println(d.toString());
-        }
-    }
-
     @Override
     public int compareTo(Device o) {
         int api = this.apiVersion.compareTo(o.apiVersion);
@@ -55,5 +35,25 @@ public class Device implements Comparable<Device> {
                 ", osName='" + osName + '\'' +
                 ", apiVersion=" + apiVersion +
                 '}';
+    }
+
+    //TreeSet - это коллекция с автоматической сортировкой. Хранящая уникальные объекты.
+    public static void main(String[] args) {
+        Device device1 = new Device(11.0, "Android 11", 30);
+        Device device2 = new Device(8.1, "Oreo", 27);
+        Device device3 = new Device(9.0, "Pie", 28);
+        Device device4 = new Device(10.0, "Android 10", 29);
+        Device device5 = new Device(8.0, "Oreo", 26);
+
+        Set<Device> set = new TreeSet<>();
+        set.add(device1);
+        set.add(device2);
+        set.add(device3);
+        set.add(device4);
+        set.add(device5);
+
+        for (Device d : set) {
+            System.out.println(d.toString());
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.fri;
+package com.lambda.lambda_generic;
 
 @SuppressWarnings("all")
 public class TestGenericInterface<T> {
