@@ -8,6 +8,8 @@ public class SynchronizeTest {
     /*
     Если метод синхронизирован, то первый отработавший по скорости поток, отработав, проинициализировал поле currentTime,
     и все последующие потоки будут дожидаться пока предыдущий не отработал - и, соответственно, не попадут в условие.
+
+    Это необходимо если надо держать единственный вызов например создания сессионного id юзера, чтобы не плодить несколько.
     */
     public static synchronized void setCurrentTime() {
         if (currentTime == null) {
@@ -19,12 +21,12 @@ public class SynchronizeTest {
     /*
     При отсутствии синхронизации, метод может переопределить поле от 1 до 6 раз, попадая в блок if.
     */
-    public static void setCurrentTimeWithoutSynchronization() {
-        if (currentTime == null) {
-            currentTime = System.currentTimeMillis();
-            System.out.println(currentTime);
-        }
-    }
+//    public static void setCurrentTime() {
+//        if (currentTime == null) {
+//            currentTime = System.currentTimeMillis();
+//            System.out.println(currentTime);
+//        }
+//    }
 
     public static void main(String[] args) {
         Thread thread_1 = new Thread(() -> setCurrentTime());
