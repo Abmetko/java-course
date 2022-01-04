@@ -72,6 +72,8 @@
 
 * Работа с датой и временем: `Date`, `Calendar`, `DateTimeFormatter`, `SimpleDateFormat`, `LocalDateTime`.
 
+* `synchronized` методы.
+
 * Работа с файлами `.properties`
 
 # **`Maven`**
