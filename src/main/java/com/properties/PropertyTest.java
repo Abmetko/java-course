@@ -1,6 +1,6 @@
 package com.properties;
 
-import static com.properties.PropertyLoader.getProperty;
+import static com.properties.PropertyProvider.getProperty;
 
 public class PropertyTest {
 

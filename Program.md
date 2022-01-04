@@ -72,7 +72,7 @@
 
 * Работа с датой и временем: `Date`, `Calendar`, `DateTimeFormatter`, `SimpleDateFormat`, `LocalDateTime`.
 
-* `synchronized` методы.
+* `synchronized` методы и синхронизированные блоки.
 
 * Работа с файлами `.properties`
 
