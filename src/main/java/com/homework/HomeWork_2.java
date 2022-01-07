@@ -25,11 +25,14 @@ public class HomeWork_2 {
 
     public static void main(String[] args) {
         //с явным объявлением типа интерфейса
-        testLambdaGeneric_1((arg) -> System.out.println(arg + 100));
+        testLambdaGeneric_1((arg) -> {
+            System.out.println(arg + 100);
+            System.out.println(arg + 100);
+        });
 
         //без явного объявление типа интерфейса - необходимо сделать приведение типа
         testLambdaGeneric_2((arg) -> System.out.println((Integer) arg + 100));
 
-        testLambdaGeneric_3((arg) -> System.out.println((String) arg + "100"));
+        testLambdaGeneric_3((arg) -> System.out.println(arg + "100"));
     }
 }

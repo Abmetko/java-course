@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public class StreamTest {
+public class Stream_Test_0 {
 
     private static final List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 

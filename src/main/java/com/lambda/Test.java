@@ -18,7 +18,7 @@ public class Test {
 
     public static void main(String[] args) {
         test(() -> {
-            System.out.println("Не попал");
+            System.out.println("Не попал");//fixme - to implement something
         });
     }
 }

@@ -5,7 +5,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
 Используя BufferedReader(), с помощью цикла положить каждую строку из файла в объект коллекции.
@@ -40,8 +42,7 @@ public class HomeWork_1 {
 
         bufferedReader.readLine();//skip header
 
-        bufferedReader
-                .lines()
+        bufferedReader.lines()
                 .forEach(LIST::add);
         bufferedReader.close();
 
@@ -50,6 +51,10 @@ public class HomeWork_1 {
     }
 
     public static void main(String[] args) throws IOException {
+//        String[] arr = {"andrey", "stasia", "liza", "olga"};
+//        List<String> list = Arrays.stream(arr).map(i -> i.toUpperCase()).collect(Collectors.toList());
+//        System.out.println(list.get(0));
+
         readPrintValuesWithLoop();
         readPrintValuesWithStream();
     }

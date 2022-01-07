@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StreamAPI_Test {
+public class Stream_Test_1 {
 
     static List<Integer> list = Arrays.asList(10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
@@ -24,7 +24,8 @@ public class StreamAPI_Test {
     }
 
     public static void streamThrowExceptionTest(int val) {
-        list.stream().filter(i -> i.equals(val))
+        list.stream()
+                .filter(i -> i.equals(val))
                 .findAny()
                 .orElseThrow(() -> new NullPointerException(String.format("there is no value: %d", val)));
         System.out.println("PASSED...");
@@ -32,7 +33,8 @@ public class StreamAPI_Test {
 
     //после выполнения фильтра, проверка, что только один элемент присутствует, иначе выбрасывается исключение
     public static void streamReduceTest(int val) {
-        System.out.println("PASSED: " + list.stream()
+        System.out.println("PASSED: " +
+                list.stream()
                 .filter(i -> i.equals(val))
                 .reduce((a, b) -> {
                     throw new IllegalStateException("FAILED: " + a + ", " + b);
