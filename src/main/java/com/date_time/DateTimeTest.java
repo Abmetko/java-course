@@ -47,7 +47,7 @@ public class DateTimeTest {
      dd MMMM yyyy	            02 January 2018
      dd MMMM yyyy zzzz	        02 January 2018 India Standard Time
      E, dd MMM yyyy HH:mm:ss z	Tue, 02 Jan 2018 18:07:59 IST
-     E MMM dd HH:mm:ss z yyyy    Mon Dec 27 21:28:32 MSK 2021
+     E MMM dd HH:mm:ss z yyyy   Mon Dec 27 21:28:32 MSK 2021
     */
     public static boolean validateDateTimeFormat(String pattern, String stringWithDateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
