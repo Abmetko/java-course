@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public class Stream_Test_0 {
+public class StreamImplementation {
 
     private static final List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
@@ -21,7 +21,7 @@ public class Stream_Test_0 {
             System.out.println(i);
         }
 
-        //реализация с помощью Stream API - любую коллекцию, имплементирующую интерфейс Collection
+        //реализация с помощью Stream API - любая коллекция, имплементирующая интерфейс Collection
         list.stream().forEach(i -> System.out.println(i));
     }
 }
