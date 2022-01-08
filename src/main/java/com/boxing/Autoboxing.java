@@ -8,7 +8,7 @@ public class Autoboxing {
     Character cOb1 = new Character('a');
     Boolean bOb1 = new Boolean(true);
 
-    //автоматическая инкапсуляция примитивного типа в эквивалентную ему класс-обёртку
+    //автоматическая инкапсуляция("автоупаковка") примитивного типа в эквивалентную ему класс-обёртку
     Integer iOb2 = 7;
     Double dOb2 = 7.0;
     Character cOb2 = 'a';
@@ -23,10 +23,6 @@ public class Autoboxing {
     }
 
     public static void method(Integer iOb) {
-        System.out.println("Integer: " + iOb);
-    }
-
-    public static void method(int iOb) {
         System.out.println("Integer: " + iOb);
     }
 }
