@@ -21,7 +21,7 @@ public class DateTimeTest {
 
         System.out.println("Current date & time as human-readable date plus one week: " + calendar.getTime());
         calendar.roll(Calendar.WEEK_OF_MONTH, false);
-        System.out.println("Current date & time as human-readable date minus seven days: " + calendar.getTime());
+        System.out.println("Current date & time as human-readable date without additional week: " + calendar.getTime());
         System.out.println("\n");
 
         // #1 Извлекли строку с датой и временем из ui элемента с целью проверить на корректность формата данных
@@ -39,7 +39,7 @@ public class DateTimeTest {
 
         System.out.println("\n");
         //#3 Проверить, что дата в ui элементе соответствует ожидаемой дате(например, текущая плюс 6 месяцев)
-        System.out.println("Compare actual date & time from ui and expected: " + validateDate("20 June 2022"));
+        System.out.println("Compare actual date & time from ui and expected: " + validateFutureDate("20 June 2022"));
     }
 
     /*
@@ -49,19 +49,19 @@ public class DateTimeTest {
      E, dd MMM yyyy HH:mm:ss z	Tue, 02 Jan 2018 18:07:59 IST
      E MMM dd HH:mm:ss z yyyy    Mon Dec 27 21:28:32 MSK 2021
     */
-    public static boolean validateDateTimeFormat(String pattern, String str) {
+    public static boolean validateDateTimeFormat(String pattern, String stringWithDateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
         try {
-            LocalDateTime.parse(str, dateTimeFormatter);
+            LocalDateTime.parse(stringWithDateTime, dateTimeFormatter);
             return true;
         } catch (DateTimeParseException e) {
             return false;
         }
     }
 
-    public static boolean validateSorting(String[] dates) {
+    public static boolean validateSorting(String[] stringDates) {
         List<LocalDateTime> actualList = new ArrayList<>();
-        for (String date : dates) {
+        for (String date : stringDates) {
             actualList.add(LocalDateTime.parse(date, DateTimeFormatter.ofPattern("MM/dd/yyyy, HH:mm")));
         }
         List<LocalDateTime> expectedList = new ArrayList<>(actualList);
@@ -73,7 +73,7 @@ public class DateTimeTest {
     /**
      * @param actualDateTime it's our text from UI element
      */
-    public static boolean validateDate(String actualDateTime) {
+    public static boolean validateFutureDate(String actualDateTime) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.add(Calendar.MONTH, 6);
