@@ -12,6 +12,8 @@ import java.util.stream.Stream;
 
 public class StreamInitialization {
 
+    // interface Collection --> stream(): interface Stream
+
     @SneakyThrows
     public static void main(String[] args) {
         //0
