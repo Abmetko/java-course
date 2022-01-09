@@ -2,10 +2,16 @@ package com.date_time;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
 
 public class DateTimeTest {
 
@@ -13,16 +19,7 @@ public class DateTimeTest {
         Date date = new Date();
 
         System.out.println("Current date & time as human-readable date: " + date);
-        System.out.println("Current date & time as timestamp(epoch): " + date.getTime());
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.add(Calendar.WEEK_OF_MONTH, 1);
-
-        System.out.println("Current date & time as human-readable date plus one week: " + calendar.getTime());
-        calendar.roll(Calendar.WEEK_OF_MONTH, false);
-        System.out.println("Current date & time as human-readable date without additional week: " + calendar.getTime());
-        System.out.println("\n");
+        System.out.println("Current date & time as timestamp(epoch): " + date.getTime());//since 1970
 
         // #1 Извлекли строку с датой и временем из ui элемента с целью проверить на корректность формата данных
         System.out.println("Valid case: " + validateDateTimeFormat("E MMM dd HH:mm:ss z yyyy", "Mon Dec 27 21:28:32 MSK 2021"));
@@ -39,7 +36,7 @@ public class DateTimeTest {
 
         System.out.println("\n");
         //#3 Проверить, что дата в ui элементе соответствует ожидаемой дате(например, текущая плюс 6 месяцев)
-        System.out.println("Compare actual date & time from ui and expected: " + validateFutureDate("20 June 2022"));
+        System.out.println("Is actual date & time from UI and expected are equals: " + validateFutureDate("09 July 2022"));
     }
 
     /*
@@ -74,17 +71,33 @@ public class DateTimeTest {
      * @param actualDateTime it's our text from UI element
      */
     public static boolean validateFutureDate(String actualDateTime) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.add(Calendar.MONTH, 6);
+        LocalDateTime localDateTime = LocalDateTime.now().plusMonths(6);
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy");
-        String expectedDateTime = simpleDateFormat.format(calendar.getTime());
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+        String expectedDateTime = dateTimeFormatter.format(localDateTime);
 
         return expectedDateTime.equals(actualDateTime);
         /*
-        Проверили, что фактическое значение на UI соответствует
+        Проверили, что та дата которая отображена на UI соответствует
         требованиям задачи, т.е. текущая дата/время плюс 6 месяцев.
         */
+    }
+
+    /**
+     * @see ZoneId#SHORT_IDS
+     */
+    public static void testZonedDateTime() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy, HH:mm z");
+
+        ZonedDateTime zonedDateTimeWithTimeZone = ZonedDateTime.now(ZoneId.of("UTC"));
+        System.out.println("Zoned: " + zonedDateTimeWithTimeZone.format(dateTimeFormatter));//Zoned: 01/09/2022, 19:58 UTC
+
+        ZonedDateTime zonedDateTimeLocal = ZonedDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
+        System.out.println("Local: " + zonedDateTimeLocal.format(dateTimeFormatter));//Local: 01/09/2022, 22:58 MSK
+    }
+
+    public static void testSimpleDateFormat() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
+        System.out.println(simpleDateFormat.format(new Date()));
     }
 }

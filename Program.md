@@ -72,7 +72,7 @@
 
 * Рекурсия.
 
-* Работа с датой и временем: `Date`, `Calendar`, `DateTimeFormatter`, `SimpleDateFormat`, `LocalDateTime`.
+* Работа с датой и временем: `Date`, `SimpleDateFormat`, `DateTimeFormatter`, `LocalDateTime`, `ZonedDateTime`.
 
 * `synchronized` методы и синхронизированные блоки.
 
