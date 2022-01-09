@@ -24,7 +24,7 @@ public class CollectionsSorting {
 
     public static void sortingOfCollectionWhichCannotImplementComparable() {
         List<HomoSapiens> integerList = Arrays.asList(new HomoSapiens(11), new HomoSapiens(10), new HomoSapiens(12));
-        integerList.sort(new HomoSapiensSorting());
+        integerList.sort(new HomoSapiensComparator());
         integerList.forEach(System.out::println);
     }
 
@@ -82,7 +82,7 @@ class HomoSapiens {
     }
 }
 
-class HomoSapiensSorting implements Comparator<HomoSapiens> {
+class HomoSapiensComparator implements Comparator<HomoSapiens> {
 
     @Override
     public int compare(HomoSapiens o1, HomoSapiens o2) {
