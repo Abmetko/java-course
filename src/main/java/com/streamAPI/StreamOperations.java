@@ -49,8 +49,8 @@ public class StreamOperations {
                 .build();
 
         return userStream.collect(Collectors.toMap(
-                user -> user.getLastName(),
-                user -> String.format("Age: %d\nSex: %s", user.getAge(), user.getSex())
+                user -> user.getLastName(),//определили ключ
+                user -> String.format("Age: %d\nSex: %s", user.getAge(), user.getSex())//определили значение
         ));
     }
 
