@@ -21,6 +21,8 @@ public class StreamInitialization {
         Stream<Integer> intStream1 = list.stream();
 
         //1
+        IntStream intStream = IntStream.rangeClosed(1, 10);
+
         Stream<Integer> intStream2 = IntStream.rangeClosed(1, 10).mapToObj(i -> new Integer(i));
 
         Stream<Integer> intStream3 = IntStream.rangeClosed(1, 10).boxed();
