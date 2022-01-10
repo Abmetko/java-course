@@ -49,8 +49,7 @@ public class DateTimeTest {
     public static boolean validateDateTimeFormat(String pattern, String stringWithDateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
         try {
-//            LocalDateTime.parse(stringWithDateTime, dateTimeFormatter);
-            dateTimeFormatter.parse(stringWithDateTime);
+            dateTimeFormatter.parse(stringWithDateTime);//преобразует строку в объект даты
             return true;
         } catch (DateTimeParseException e) {
             return false;
@@ -75,7 +74,7 @@ public class DateTimeTest {
         LocalDateTime localDateTime = LocalDateTime.now().plusMonths(6);
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
-        String expectedDateTime = dateTimeFormatter.format(localDateTime);
+        String expectedDateTime = dateTimeFormatter.format(localDateTime);//преобразует объект даты в строку
 
         return expectedDateTime.equals(actualDateTime);
         /*

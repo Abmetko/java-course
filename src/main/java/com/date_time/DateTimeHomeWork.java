@@ -6,11 +6,14 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 
 public class DateTimeHomeWork {
 
-    private static final String PATTERN = "E, dd MMM yyyy HH:mm:ss";
+    private static final String PATTERN_1 = "E, dd MMM yyyy HH:mm:ss";
+
+    private static final String PATTERN_2 = "'Created:' E MMM dd HH:mm:ss z yyyy";//экранирование 'символов'
 
     public static String getCurrentTimeInPattern(String pattern) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -29,9 +32,20 @@ public class DateTimeHomeWork {
         return dateTimeFormatter.format(zonedDateTime);
     }
 
+    public static boolean validateDateFormat(String pattern, String dateToValidate) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+        try {
+            dateTimeFormatter.parse(dateToValidate);
+            return true;
+        } catch (DateTimeParseException e) {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(getCurrentTimeInPattern(PATTERN));
-        System.out.println(getCurrentTimeInPatternIncreasedInMinutes(PATTERN, 10));
-        System.out.println(getCurrentTimeInPatternInTimeZone(PATTERN, "Europe/Berlin"));
+        System.out.println(getCurrentTimeInPattern(PATTERN_1));
+        System.out.println(getCurrentTimeInPatternIncreasedInMinutes(PATTERN_1, 10));
+        System.out.println(getCurrentTimeInPatternInTimeZone(PATTERN_1, "Europe/Berlin"));
+        System.out.println(validateDateFormat(PATTERN_2,"Created: Mon Dec 27 21:28:32 MSK 2021"));
     }
 }
