@@ -27,7 +27,7 @@ public class StreamInitialization {
 
         Stream<Integer> intStream2 = IntStream.rangeClosed(1, 10).mapToObj(i -> new Integer(i));
 
-        Stream<Integer> intStream3 = IntStream.rangeClosed(1, 10).boxed();
+        Stream<Integer> intStream3 = IntStream.rangeClosed(1, 1000).boxed();
 
         //2
         Stream<Integer> intStream4 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);

@@ -49,7 +49,8 @@ public class DateTimeTest {
     public static boolean validateDateTimeFormat(String pattern, String stringWithDateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
         try {
-            LocalDateTime.parse(stringWithDateTime, dateTimeFormatter);
+//            LocalDateTime.parse(stringWithDateTime, dateTimeFormatter);
+            dateTimeFormatter.parse(stringWithDateTime);
             return true;
         } catch (DateTimeParseException e) {
             return false;

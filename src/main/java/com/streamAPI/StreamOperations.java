@@ -28,7 +28,7 @@ public class StreamOperations {
 
     //получить результат перемножения всех элементов стрима
     public static int getResultOfMultiplication() {
-        return Stream.of(1, 2, 3)
+        return Stream.of(1, 2, 3, 2)
                 .reduce((left, right) -> left * right)
                 .get();
     }
@@ -70,7 +70,7 @@ public class StreamOperations {
 
     //в случае если в стриме будет более одного элемента, то метод reduce() выполнится и в теле лямбда выражения сгенерится exception
     public static void streamOnlyOneElementInStream() {
-        Stream.of(1, 2)
+        Stream.of(1,3)
                 .reduce((left, right) -> {
                     throw new IllegalStateException("Элементов оказывается более одного...");
                 });
@@ -78,9 +78,11 @@ public class StreamOperations {
 
     @SneakyThrows
     public static void main(String[] args) {
-        System.out.println(getMapFromStream().get("Parker"));
-
-        streamTerminalOperation();
+//        System.out.println(getMapFromStream().get("Parker"));
+//
+//        streamTerminalOperation();
+//
+//        streamOnlyOneElementInStream();
 
         streamOnlyOneElementInStream();
     }
