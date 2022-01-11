@@ -2,7 +2,7 @@ package others.createCheckbox;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import com.configuration.AppConfiguration;
+import com.java_course.configuration.AppConfiguration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
