@@ -7,15 +7,6 @@ public class Toyota extends Car {
 
     private static final Logger log = LoggerFactory.getLogger(Toyota.class);
 
-    @Override
-    public void driveCar() {
-        log.info("Drive toyota.");
-    }
-
-    public void closeToyota(){
-        rootLogger.info("Alarm is on.");//root logger
-    }
-
     public static void main(String[] args) {
         System.out.print("\n");
         Toyota toyota = new Toyota();
@@ -23,5 +14,14 @@ public class Toyota extends Car {
         toyota.speedLimit();
         toyota.stopCar();
         toyota.closeToyota();
+    }
+
+    @Override
+    public void driveCar() {
+        log.info("Drive toyota.");
+    }
+
+    public void closeToyota() {
+        rootLogger.info("Alarm is on.");//root logger
     }
 }
