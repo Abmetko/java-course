@@ -9,7 +9,7 @@ public class OutputStreamTest {
         String str = "Hello world";
         byte[] buffer = str.getBytes();
 
-        FileOutputStream fileOutputStream = new FileOutputStream("src/main/java/com/io/streams/file.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("src/main/java/com/java_course/io/streams/file.txt");
         fileOutputStream.write(buffer, 0, buffer.length);
         fileOutputStream.close();
     }

@@ -18,7 +18,7 @@ public class Device implements Comparable<Device> {
     @Override
     public int compareTo(Device o) {
         int api = this.apiVersion.compareTo(o.apiVersion);
-        if ( api != 0) {
+        if (api != 0) {
             return api;
         } else return this.osVersion.compareTo(o.osVersion);
         /*
