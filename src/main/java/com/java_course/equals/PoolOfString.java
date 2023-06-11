@@ -12,7 +12,7 @@ public class PoolOfString {
     public static void main(String[] args) {
         System.out.println(text_1.equals(text_2)); //true
         System.out.println(text_1 == text_2); //true
-        System.out.println(text_1 == text_3); //false
-        System.out.println(text_3.equals(text_4)); //true
+        System.out.println(text_1 == text_3); //false - сравнение объекта и примитива из пула
+        System.out.println(text_3.equals(text_4)); //true - сравнение объектов с переопределенныв методом equals в классе String
     }
 }

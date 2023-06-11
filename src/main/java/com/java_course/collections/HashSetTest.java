@@ -32,6 +32,7 @@ public class HashSetTest {
         //удалить все элементы коллекции
         set.clear();
 
+        //noinspection ConstantValue
         System.out.println("Получить размер множества: " + set.size());
     }
 }
