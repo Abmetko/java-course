@@ -53,4 +53,8 @@ public class PropertyProvider {
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(getProperty("a"));
+    }
 }

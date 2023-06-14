@@ -15,10 +15,10 @@ public class SerializationDeserializationWithObjectMapper {
         ObjectMapper mapper = new ObjectMapper();
 
         //сериализация данных объекта в файл(json формат)
-        mapper.writeValue(new File("src/main/java/com/serialization/user.json"), new Human("John", "LA", 80));
+        mapper.writeValue(new File("src/main/java/com/java_course/serialization/user.json"), new Human("John", "LA", 80));
 
         //десериализация данных из файла в java объект
-        Human human = mapper.readValue(new File("src/main/java/com/serialization/user.json"), Human.class);
+        Human human = mapper.readValue(new File("src/main/java/com/java_course/serialization/user.json"), Human.class);
         System.out.println(human.age);//вывод на печать поля объекта --> 80
 
         //десериализация данных из строки в java объект
