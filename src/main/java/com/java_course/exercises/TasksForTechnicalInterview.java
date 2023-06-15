@@ -141,7 +141,7 @@ class QueueTest {
     public QueueTest(int queueSize) {
         putIndex = 0;
         getIndex = 0;
-        this.queue = new char[queueSize + 1];
+        this.queue = new char[queueSize];
     }
 
     public char get() {
@@ -155,8 +155,8 @@ class QueueTest {
     }
 
     public void put(char element) {
-        if (queue.length - 1 == putIndex) {
-            System.out.println("Queue is full.");
+        if (queue.length == putIndex) {
+            System.out.println("Queue is full. It's impossible to put: " + element);
             return;
         }
         queue[putIndex] = element;
